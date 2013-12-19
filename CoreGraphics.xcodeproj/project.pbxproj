@@ -1,0 +1,1106 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43BA6995185DDC4800526D8E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43BA6993185DDC4800526D8E /* InfoPlist.strings */; };
+		43BA69ED185DDCB900526D8E /* CGAffineTransform.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69B8185DDCB900526D8E /* CGAffineTransform.h */; };
+		43BA69EE185DDCB900526D8E /* CGBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69B9185DDCB900526D8E /* CGBase.h */; };
+		43BA69EF185DDCB900526D8E /* CGBitmapContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69BA185DDCB900526D8E /* CGBitmapContext.h */; };
+		43BA69F0185DDCB900526D8E /* CGColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69BB185DDCB900526D8E /* CGColor.h */; };
+		43BA69F1185DDCB900526D8E /* CGColorSpace.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69BC185DDCB900526D8E /* CGColorSpace.h */; };
+		43BA69F2185DDCB900526D8E /* CGContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69BD185DDCB900526D8E /* CGContext.h */; };
+		43BA69F3185DDCB900526D8E /* CGDataConsumer.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69BE185DDCB900526D8E /* CGDataConsumer.h */; };
+		43BA69F4185DDCB900526D8E /* CGDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69BF185DDCB900526D8E /* CGDataProvider.h */; };
+		43BA69F5185DDCB900526D8E /* CGEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69C0185DDCB900526D8E /* CGEvent.h */; };
+		43BA69F6185DDCB900526D8E /* CGEventType.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69C1185DDCB900526D8E /* CGEventType.h */; };
+		43BA69F7185DDCB900526D8E /* CGFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69C2185DDCB900526D8E /* CGFont.h */; };
+		43BA69F8185DDCB900526D8E /* CGFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69C3185DDCB900526D8E /* CGFunction.h */; };
+		43BA69F9185DDCB900526D8E /* CGGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69C4185DDCB900526D8E /* CGGeometry.h */; };
+		43BA69FA185DDCB900526D8E /* CGGradient.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69C5185DDCB900526D8E /* CGGradient.h */; };
+		43BA69FB185DDCB900526D8E /* CGImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69C6185DDCB900526D8E /* CGImage.h */; };
+		43BA69FC185DDCB900526D8E /* CGImageDestination.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69C7185DDCB900526D8E /* CGImageDestination.h */; };
+		43BA69FD185DDCB900526D8E /* CGImageSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69C8185DDCB900526D8E /* CGImageSource.h */; };
+		43BA69FE185DDCB900526D8E /* CGLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69C9185DDCB900526D8E /* CGLayer.h */; };
+		43BA69FF185DDCB900526D8E /* CGPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69CA185DDCB900526D8E /* CGPath.h */; };
+		43BA6A00185DDCB900526D8E /* CGPattern.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69CB185DDCB900526D8E /* CGPattern.h */; };
+		43BA6A01185DDCB900526D8E /* CGPDFArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69CC185DDCB900526D8E /* CGPDFArray.h */; };
+		43BA6A02185DDCB900526D8E /* CGPDFContentStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69CD185DDCB900526D8E /* CGPDFContentStream.h */; };
+		43BA6A03185DDCB900526D8E /* CGPDFContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69CE185DDCB900526D8E /* CGPDFContext.h */; };
+		43BA6A04185DDCB900526D8E /* CGPDFDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69CF185DDCB900526D8E /* CGPDFDictionary.h */; };
+		43BA6A05185DDCB900526D8E /* CGPDFDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69D0185DDCB900526D8E /* CGPDFDocument.h */; };
+		43BA6A06185DDCB900526D8E /* CGPDFObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69D1185DDCB900526D8E /* CGPDFObject.h */; };
+		43BA6A07185DDCB900526D8E /* CGPDFOperatorTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69D2185DDCB900526D8E /* CGPDFOperatorTable.h */; };
+		43BA6A08185DDCB900526D8E /* CGPDFPage.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69D3185DDCB900526D8E /* CGPDFPage.h */; };
+		43BA6A09185DDCB900526D8E /* CGPDFScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69D4185DDCB900526D8E /* CGPDFScanner.h */; };
+		43BA6A0A185DDCB900526D8E /* CGPDFStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69D5185DDCB900526D8E /* CGPDFStream.h */; };
+		43BA6A0B185DDCB900526D8E /* CGPDFString.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69D6185DDCB900526D8E /* CGPDFString.h */; };
+		43BA6A0C185DDCB900526D8E /* CGPSConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69D7185DDCB900526D8E /* CGPSConverter.h */; };
+		43BA6A0D185DDCB900526D8E /* CGShading.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69D8185DDCB900526D8E /* CGShading.h */; };
+		43BA6A0E185DDCB900526D8E /* CoreGraphics.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69D9185DDCB900526D8E /* CoreGraphics.h */; };
+		43BA6A0F185DDCB900526D8E /* OPPostScriptContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69DA185DDCB900526D8E /* OPPostScriptContext.h */; };
+		43BA6A10185DDCB900526D8E /* OPSVGContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69DB185DDCB900526D8E /* OPSVGContext.h */; };
+		43BA6A24185DDCDD00526D8E /* coated_FOGRA39L_argl.icc in Resources */ = {isa = PBXBuildFile; fileRef = 43BA6A22185DDCDD00526D8E /* coated_FOGRA39L_argl.icc */; };
+		43BA6A25185DDCDD00526D8E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 43BA6A23185DDCDD00526D8E /* LICENSE */; };
+		43BA6B2B185DDD0E00526D8E /* CairoFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A2F185DDD0E00526D8E /* CairoFont.h */; };
+		43BA6B2C185DDD0E00526D8E /* CairoFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A30185DDD0E00526D8E /* CairoFont.m */; };
+		43BA6B2D185DDD0E00526D8E /* CairoFontWin32.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A31185DDD0E00526D8E /* CairoFontWin32.h */; };
+		43BA6B2F185DDD0E00526D8E /* CairoFontX11.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A33185DDD0E00526D8E /* CairoFontX11.h */; };
+		43BA6B31185DDD0E00526D8E /* StandardGlyphNames.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A35185DDD0E00526D8E /* StandardGlyphNames.h */; };
+		43BA6B32185DDD0E00526D8E /* StandardGlyphNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A36185DDD0E00526D8E /* StandardGlyphNames.m */; };
+		43BA6B33185DDD0E00526D8E /* CGAffineTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A37185DDD0E00526D8E /* CGAffineTransform.m */; };
+		43BA6B34185DDD0E00526D8E /* CGBitmapContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A38185DDD0E00526D8E /* CGBitmapContext.m */; };
+		43BA6B35185DDD0E00526D8E /* CGColor-private.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A39185DDD0E00526D8E /* CGColor-private.h */; };
+		43BA6B36185DDD0E00526D8E /* CGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A3A185DDD0E00526D8E /* CGColor.m */; };
+		43BA6B37185DDD0E00526D8E /* CGColorSpace-private.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A3B185DDD0E00526D8E /* CGColorSpace-private.h */; };
+		43BA6B38185DDD0E00526D8E /* CGColorSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A3C185DDD0E00526D8E /* CGColorSpace.m */; };
+		43BA6B39185DDD0E00526D8E /* CGContext+GState.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A3D185DDD0E00526D8E /* CGContext+GState.m */; };
+		43BA6B3A185DDD0E00526D8E /* CGContext-private.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A3E185DDD0E00526D8E /* CGContext-private.h */; };
+		43BA6B3B185DDD0E00526D8E /* CGContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A3F185DDD0E00526D8E /* CGContext.m */; };
+		43BA6B3C185DDD0E00526D8E /* CGDataConsumer-private.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A40185DDD0E00526D8E /* CGDataConsumer-private.h */; };
+		43BA6B3D185DDD0E00526D8E /* CGDataConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A41185DDD0E00526D8E /* CGDataConsumer.m */; };
+		43BA6B3E185DDD0E00526D8E /* CGDataProvider-private.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A42185DDD0E00526D8E /* CGDataProvider-private.h */; };
+		43BA6B3F185DDD0E00526D8E /* CGDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A43185DDD0E00526D8E /* CGDataProvider.m */; };
+		43BA6B40185DDD0E00526D8E /* CGFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A44185DDD0E00526D8E /* CGFont.m */; };
+		43BA6B41185DDD0E00526D8E /* CGFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A45185DDD0E00526D8E /* CGFunction.m */; };
+		43BA6B42185DDD0E00526D8E /* CGGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A46185DDD0E00526D8E /* CGGeometry.m */; };
+		43BA6B43185DDD0E00526D8E /* CGGradient-private.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A47185DDD0E00526D8E /* CGGradient-private.h */; };
+		43BA6B44185DDD0E00526D8E /* CGGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A48185DDD0E00526D8E /* CGGradient.m */; };
+		43BA6B45185DDD0E00526D8E /* CGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A49185DDD0E00526D8E /* CGImage.m */; };
+		43BA6B46185DDD0E00526D8E /* CGImageDestination-private.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A4A185DDD0E00526D8E /* CGImageDestination-private.h */; };
+		43BA6B47185DDD0E00526D8E /* CGImageDestination.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A4B185DDD0E00526D8E /* CGImageDestination.m */; };
+		43BA6B48185DDD0E00526D8E /* CGImageSource-private.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A4C185DDD0E00526D8E /* CGImageSource-private.h */; };
+		43BA6B49185DDD0E00526D8E /* CGImageSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A4D185DDD0E00526D8E /* CGImageSource.m */; };
+		43BA6B4A185DDD0E00526D8E /* CGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A4E185DDD0E00526D8E /* CGLayer.m */; };
+		43BA6B4B185DDD0E00526D8E /* CGPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A4F185DDD0E00526D8E /* CGPath.m */; };
+		43BA6B4C185DDD0E00526D8E /* CGPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A50185DDD0E00526D8E /* CGPattern.m */; };
+		43BA6B4D185DDD0E00526D8E /* CGPDFArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A51185DDD0E00526D8E /* CGPDFArray.m */; };
+		43BA6B4E185DDD0E00526D8E /* CGPDFContentStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A52185DDD0E00526D8E /* CGPDFContentStream.m */; };
+		43BA6B4F185DDD0E00526D8E /* CGPDFContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A53185DDD0E00526D8E /* CGPDFContext.m */; };
+		43BA6B50185DDD0E00526D8E /* CGPDFDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A54185DDD0E00526D8E /* CGPDFDictionary.m */; };
+		43BA6B51185DDD0E00526D8E /* CGPDFDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A55185DDD0E00526D8E /* CGPDFDocument.m */; };
+		43BA6B52185DDD0E00526D8E /* CGPDFObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A56185DDD0E00526D8E /* CGPDFObject.m */; };
+		43BA6B53185DDD0E00526D8E /* CGPDFOperatorTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A57185DDD0E00526D8E /* CGPDFOperatorTable.m */; };
+		43BA6B54185DDD0E00526D8E /* CGPDFPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A58185DDD0E00526D8E /* CGPDFPage.m */; };
+		43BA6B55185DDD0E00526D8E /* CGPDFScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A59185DDD0E00526D8E /* CGPDFScanner.m */; };
+		43BA6B56185DDD0E00526D8E /* CGPDFStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A5A185DDD0E00526D8E /* CGPDFStream.m */; };
+		43BA6B57185DDD0E00526D8E /* CGPDFString.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A5B185DDD0E00526D8E /* CGPDFString.m */; };
+		43BA6B58185DDD0E00526D8E /* CGPSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A5C185DDD0E00526D8E /* CGPSConverter.m */; };
+		43BA6B59185DDD0E00526D8E /* CGShading.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A5D185DDD0E00526D8E /* CGShading.m */; };
+		43BA6B5B185DDD0E00526D8E /* OPImageCodecJPEG.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A60185DDD0E00526D8E /* OPImageCodecJPEG.m */; };
+		43BA6B5C185DDD0E00526D8E /* OPImageCodecPNG.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A61185DDD0E00526D8E /* OPImageCodecPNG.m */; };
+		43BA6B5D185DDD0E00526D8E /* OPImageCodecTIFF.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A62185DDD0E00526D8E /* OPImageCodecTIFF.m */; };
+		43BA6B5E185DDD0E00526D8E /* CGFontInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A64185DDD0E00526D8E /* CGFontInternal.h */; };
+		43BA6BC1185DDD0E00526D8E /* OPColorSpaceIndexed.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6ACB185DDD0E00526D8E /* OPColorSpaceIndexed.h */; };
+		43BA6BC2185DDD0E00526D8E /* OPColorSpaceIndexed.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6ACC185DDD0E00526D8E /* OPColorSpaceIndexed.m */; };
+		43BA6BC3185DDD0E00526D8E /* OPColorSpaceLCMS.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6ACD185DDD0E00526D8E /* OPColorSpaceLCMS.h */; };
+		43BA6BC4185DDD0E00526D8E /* OPColorSpaceLCMS.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6ACE185DDD0E00526D8E /* OPColorSpaceLCMS.m */; };
+		43BA6BC5185DDD0E00526D8E /* OPColorTransformLCMS.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6ACF185DDD0E00526D8E /* OPColorTransformLCMS.h */; };
+		43BA6BC6185DDD0E00526D8E /* OPColorTransformLCMS.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6AD0185DDD0E00526D8E /* OPColorTransformLCMS.m */; };
+		43BA6BC7185DDD0E00526D8E /* OPImageConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6AD1185DDD0E00526D8E /* OPImageConversion.h */; };
+		43BA6BC8185DDD0E00526D8E /* OPImageConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6AD2185DDD0E00526D8E /* OPImageConversion.m */; };
+		43BA6BC9185DDD0E00526D8E /* OPLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6AD3185DDD0E00526D8E /* OPLogging.h */; };
+		43BA6BCA185DDD0E00526D8E /* OPLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6AD4185DDD0E00526D8E /* OPLogging.m */; };
+		43BA6BCB185DDD0E00526D8E /* OPPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6AD5185DDD0E00526D8E /* OPPath.h */; };
+		43BA6BCC185DDD0E00526D8E /* OPPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6AD6185DDD0E00526D8E /* OPPath.m */; };
+		43BA6BCD185DDD0E00526D8E /* OPPostScriptContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6AD7185DDD0E00526D8E /* OPPostScriptContext.m */; };
+		43BA6BCE185DDD0E00526D8E /* OPPremultiplyAlpha.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6AD8185DDD0E00526D8E /* OPPremultiplyAlpha.h */; };
+		43BA6BCF185DDD0E00526D8E /* OPPremultiplyAlpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6AD9185DDD0E00526D8E /* OPPremultiplyAlpha.m */; };
+		43BA6BD0185DDD0E00526D8E /* OPSVGContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6ADA185DDD0E00526D8E /* OPSVGContext.m */; };
+		43BA6C17185DDDAA00526D8E /* OPImageCodecJPEG.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A60185DDD0E00526D8E /* OPImageCodecJPEG.m */; };
+		43BA6C18185DDDAA00526D8E /* CGPSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A5C185DDD0E00526D8E /* CGPSConverter.m */; };
+		43BA6C19185DDDAA00526D8E /* CGImageDestination.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A4B185DDD0E00526D8E /* CGImageDestination.m */; };
+		43BA6C1A185DDDAA00526D8E /* CGColorSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A3C185DDD0E00526D8E /* CGColorSpace.m */; };
+		43BA6C1B185DDDAA00526D8E /* OPPremultiplyAlpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6AD9185DDD0E00526D8E /* OPPremultiplyAlpha.m */; };
+		43BA6C1C185DDDAA00526D8E /* CGPDFStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A5A185DDD0E00526D8E /* CGPDFStream.m */; };
+		43BA6C1D185DDDAA00526D8E /* CGPDFString.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A5B185DDD0E00526D8E /* CGPDFString.m */; };
+		43BA6C1F185DDDAA00526D8E /* CGPDFDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A54185DDD0E00526D8E /* CGPDFDictionary.m */; };
+		43BA6C20185DDDAA00526D8E /* CGPDFOperatorTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A57185DDD0E00526D8E /* CGPDFOperatorTable.m */; };
+		43BA6C21185DDDAA00526D8E /* CGPDFArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A51185DDD0E00526D8E /* CGPDFArray.m */; };
+		43BA6C22185DDDAA00526D8E /* OPImageCodecPNG.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A61185DDD0E00526D8E /* OPImageCodecPNG.m */; };
+		43BA6C23185DDDAA00526D8E /* CGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A49185DDD0E00526D8E /* CGImage.m */; };
+		43BA6C26185DDDAA00526D8E /* CGPDFScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A59185DDD0E00526D8E /* CGPDFScanner.m */; };
+		43BA6C27185DDDAA00526D8E /* CGBitmapContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A38185DDD0E00526D8E /* CGBitmapContext.m */; };
+		43BA6C29185DDDAA00526D8E /* OPSVGContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6ADA185DDD0E00526D8E /* OPSVGContext.m */; };
+		43BA6C2C185DDDAA00526D8E /* CGGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A46185DDD0E00526D8E /* CGGeometry.m */; };
+		43BA6C2D185DDDAA00526D8E /* CGFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A45185DDD0E00526D8E /* CGFunction.m */; };
+		43BA6C2F185DDDAA00526D8E /* CGAffineTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A37185DDD0E00526D8E /* CGAffineTransform.m */; };
+		43BA6C30185DDDAA00526D8E /* OPImageCodecTIFF.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A62185DDD0E00526D8E /* OPImageCodecTIFF.m */; };
+		43BA6C31185DDDAA00526D8E /* CGImageSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A4D185DDD0E00526D8E /* CGImageSource.m */; };
+		43BA6C33185DDDAA00526D8E /* StandardGlyphNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A36185DDD0E00526D8E /* StandardGlyphNames.m */; };
+		43BA6C34185DDDAA00526D8E /* OPColorSpaceIndexed.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6ACC185DDD0E00526D8E /* OPColorSpaceIndexed.m */; };
+		43BA6C37185DDDAA00526D8E /* OPPostScriptContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6AD7185DDD0E00526D8E /* OPPostScriptContext.m */; };
+		43BA6C38185DDDAA00526D8E /* CGDataConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A41185DDD0E00526D8E /* CGDataConsumer.m */; };
+		43BA6C3C185DDDAA00526D8E /* CGPDFDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A55185DDD0E00526D8E /* CGPDFDocument.m */; };
+		43BA6C3D185DDDAA00526D8E /* CGPDFObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A56185DDD0E00526D8E /* CGPDFObject.m */; };
+		43BA6C3F185DDDAA00526D8E /* CGShading.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A5D185DDD0E00526D8E /* CGShading.m */; };
+		43BA6C40185DDDAA00526D8E /* CGContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A3F185DDD0E00526D8E /* CGContext.m */; };
+		43BA6C41185DDDAA00526D8E /* CairoFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A30185DDD0E00526D8E /* CairoFont.m */; };
+		43BA6C42185DDDAA00526D8E /* CGFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A44185DDD0E00526D8E /* CGFont.m */; };
+		43BA6C46185DDDAA00526D8E /* OPLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6AD4185DDD0E00526D8E /* OPLogging.m */; };
+		43BA6C47185DDDAA00526D8E /* OPColorSpaceLCMS.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6ACE185DDD0E00526D8E /* OPColorSpaceLCMS.m */; };
+		43BA6C48185DDDAA00526D8E /* CGPDFContentStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A52185DDD0E00526D8E /* CGPDFContentStream.m */; };
+		43BA6C4A185DDDAA00526D8E /* CGPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A4F185DDD0E00526D8E /* CGPath.m */; };
+		43BA6C4B185DDDAA00526D8E /* CGGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A48185DDD0E00526D8E /* CGGradient.m */; };
+		43BA6C4C185DDDAA00526D8E /* CGPDFContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A53185DDD0E00526D8E /* CGPDFContext.m */; };
+		43BA6C4D185DDDAA00526D8E /* CGDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A43185DDD0E00526D8E /* CGDataProvider.m */; };
+		43BA6C4F185DDDAA00526D8E /* CGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A4E185DDD0E00526D8E /* CGLayer.m */; };
+		43BA6C50185DDDAA00526D8E /* OPImageConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6AD2185DDD0E00526D8E /* OPImageConversion.m */; };
+		43BA6C51185DDDAA00526D8E /* CGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A3A185DDD0E00526D8E /* CGColor.m */; };
+		43BA6C52185DDDAA00526D8E /* OPPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6AD6185DDD0E00526D8E /* OPPath.m */; };
+		43BA6C53185DDDAA00526D8E /* CGPDFPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A58185DDD0E00526D8E /* CGPDFPage.m */; };
+		43BA6C54185DDDAA00526D8E /* OPColorTransformLCMS.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6AD0185DDD0E00526D8E /* OPColorTransformLCMS.m */; };
+		43BA6C55185DDDAA00526D8E /* CGPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A50185DDD0E00526D8E /* CGPattern.m */; };
+		43BA6C59185DDDAA00526D8E /* CGContext+GState.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A3D185DDD0E00526D8E /* CGContext+GState.m */; };
+		43BA6C5C185DDDAA00526D8E /* CGColorSpace.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69BC185DDCB900526D8E /* CGColorSpace.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C5D185DDDAA00526D8E /* CairoFontX11.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A33185DDD0E00526D8E /* CairoFontX11.h */; };
+		43BA6C5E185DDDAA00526D8E /* CGPDFDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69D0185DDCB900526D8E /* CGPDFDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C5F185DDDAA00526D8E /* CGImageDestination-private.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A4A185DDD0E00526D8E /* CGImageDestination-private.h */; };
+		43BA6C60185DDDAA00526D8E /* CGEventType.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69C1185DDCB900526D8E /* CGEventType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C61185DDDAA00526D8E /* CGColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69BB185DDCB900526D8E /* CGColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C63185DDDAA00526D8E /* OPPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6AD5185DDD0E00526D8E /* OPPath.h */; };
+		43BA6C65185DDDAA00526D8E /* CGPDFString.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69D6185DDCB900526D8E /* CGPDFString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C66185DDDAA00526D8E /* CGPDFObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69D1185DDCB900526D8E /* CGPDFObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C67185DDDAA00526D8E /* CGDataProvider-private.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A42185DDD0E00526D8E /* CGDataProvider-private.h */; };
+		43BA6C69185DDDAA00526D8E /* CGPDFArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69CC185DDCB900526D8E /* CGPDFArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C6B185DDDAA00526D8E /* OPImageConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6AD1185DDD0E00526D8E /* OPImageConversion.h */; };
+		43BA6C6C185DDDAA00526D8E /* CGContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69BD185DDCB900526D8E /* CGContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C72185DDDAA00526D8E /* CGPDFContentStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69CD185DDCB900526D8E /* CGPDFContentStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C73185DDDAA00526D8E /* OPPostScriptContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69DA185DDCB900526D8E /* OPPostScriptContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C75185DDDAA00526D8E /* CGBitmapContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69BA185DDCB900526D8E /* CGBitmapContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C76185DDDAA00526D8E /* OPPremultiplyAlpha.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6AD8185DDD0E00526D8E /* OPPremultiplyAlpha.h */; };
+		43BA6C77185DDDAA00526D8E /* CGDataConsumer-private.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A40185DDD0E00526D8E /* CGDataConsumer-private.h */; };
+		43BA6C78185DDDAA00526D8E /* CGPSConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69D7185DDCB900526D8E /* CGPSConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C79185DDDAA00526D8E /* StandardGlyphNames.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A35185DDD0E00526D8E /* StandardGlyphNames.h */; };
+		43BA6C7B185DDDAA00526D8E /* CGPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69CA185DDCB900526D8E /* CGPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C7C185DDDAA00526D8E /* CGAffineTransform.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69B8185DDCB900526D8E /* CGAffineTransform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C7D185DDDAA00526D8E /* CGPDFDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69CF185DDCB900526D8E /* CGPDFDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C7E185DDDAA00526D8E /* CGColor-private.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A39185DDD0E00526D8E /* CGColor-private.h */; };
+		43BA6C7F185DDDAA00526D8E /* CGGradient-private.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A47185DDD0E00526D8E /* CGGradient-private.h */; };
+		43BA6C80185DDDAA00526D8E /* OPLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6AD3185DDD0E00526D8E /* OPLogging.h */; };
+		43BA6C81185DDDAA00526D8E /* CGFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69C2185DDCB900526D8E /* CGFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C82185DDDAA00526D8E /* CGEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69C0185DDCB900526D8E /* CGEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C83185DDDAA00526D8E /* CGFontInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A64185DDD0E00526D8E /* CGFontInternal.h */; };
+		43BA6C84185DDDAA00526D8E /* CGGradient.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69C5185DDCB900526D8E /* CGGradient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C87185DDDAA00526D8E /* CGImageDestination.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69C7185DDCB900526D8E /* CGImageDestination.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C88185DDDAA00526D8E /* CoreGraphics.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69D9185DDCB900526D8E /* CoreGraphics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C8A185DDDAA00526D8E /* CGDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69BF185DDCB900526D8E /* CGDataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C8B185DDDAA00526D8E /* CairoFontWin32.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A31185DDD0E00526D8E /* CairoFontWin32.h */; };
+		43BA6C8D185DDDAA00526D8E /* CGDataConsumer.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69BE185DDCB900526D8E /* CGDataConsumer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C8E185DDDAA00526D8E /* CairoFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A2F185DDD0E00526D8E /* CairoFont.h */; };
+		43BA6C90185DDDAA00526D8E /* CGPDFPage.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69D3185DDCB900526D8E /* CGPDFPage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C91185DDDAA00526D8E /* CGPDFOperatorTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69D2185DDCB900526D8E /* CGPDFOperatorTable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C93185DDDAA00526D8E /* CGPattern.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69CB185DDCB900526D8E /* CGPattern.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C94185DDDAA00526D8E /* OPColorTransformLCMS.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6ACF185DDD0E00526D8E /* OPColorTransformLCMS.h */; };
+		43BA6C96185DDDAA00526D8E /* CGPDFStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69D5185DDCB900526D8E /* CGPDFStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C97185DDDAA00526D8E /* CGColorSpace-private.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A3B185DDD0E00526D8E /* CGColorSpace-private.h */; };
+		43BA6C98185DDDAA00526D8E /* OPColorSpaceLCMS.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6ACD185DDD0E00526D8E /* OPColorSpaceLCMS.h */; };
+		43BA6C9A185DDDAA00526D8E /* OPColorSpaceIndexed.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6ACB185DDD0E00526D8E /* OPColorSpaceIndexed.h */; };
+		43BA6C9B185DDDAA00526D8E /* CGFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69C3185DDCB900526D8E /* CGFunction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C9C185DDDAA00526D8E /* CGImageSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69C8185DDCB900526D8E /* CGImageSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6C9F185DDDAA00526D8E /* CGImageSource-private.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A4C185DDD0E00526D8E /* CGImageSource-private.h */; };
+		43BA6CA0185DDDAA00526D8E /* CGShading.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69D8185DDCB900526D8E /* CGShading.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6CA1185DDDAA00526D8E /* CGContext-private.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA6A3E185DDD0E00526D8E /* CGContext-private.h */; };
+		43BA6CA2185DDDAA00526D8E /* CGLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69C9185DDCB900526D8E /* CGLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6CA3185DDDAA00526D8E /* CGPDFScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69D4185DDCB900526D8E /* CGPDFScanner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6CA5185DDDAA00526D8E /* CGPDFContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69CE185DDCB900526D8E /* CGPDFContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6CA6185DDDAA00526D8E /* OPSVGContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69DB185DDCB900526D8E /* OPSVGContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6CA7185DDDAA00526D8E /* CGGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69C4185DDCB900526D8E /* CGGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6CAA185DDDAA00526D8E /* CGBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69B9185DDCB900526D8E /* CGBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6CAB185DDDAA00526D8E /* CGImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69C6185DDCB900526D8E /* CGImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BA6CAE185DDDAA00526D8E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 43BA6A23185DDCDD00526D8E /* LICENSE */; };
+		43BA6CB0185DDDAA00526D8E /* coated_FOGRA39L_argl.icc in Resources */ = {isa = PBXBuildFile; fileRef = 43BA6A22185DDCDD00526D8E /* coated_FOGRA39L_argl.icc */; };
+		43BA6CB1185DDDAA00526D8E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43BA6993185DDC4800526D8E /* InfoPlist.strings */; };
+		43BA6CF0185DE1D100526D8E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BA6CEF185DE1D100526D8E /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		43BA6987185DDC4800526D8E /* CoreGraphics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreGraphics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43BA6992185DDC4800526D8E /* CoreGraphics-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreGraphics-Info.plist"; sourceTree = "<group>"; };
+		43BA6994185DDC4800526D8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		43BA6996185DDC4800526D8E /* CoreGraphics-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreGraphics-Prefix.pch"; sourceTree = "<group>"; };
+		43BA69B8185DDCB900526D8E /* CGAffineTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGAffineTransform.h; sourceTree = "<group>"; };
+		43BA69B9185DDCB900526D8E /* CGBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGBase.h; sourceTree = "<group>"; };
+		43BA69BA185DDCB900526D8E /* CGBitmapContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGBitmapContext.h; sourceTree = "<group>"; };
+		43BA69BB185DDCB900526D8E /* CGColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGColor.h; sourceTree = "<group>"; };
+		43BA69BC185DDCB900526D8E /* CGColorSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGColorSpace.h; sourceTree = "<group>"; };
+		43BA69BD185DDCB900526D8E /* CGContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGContext.h; sourceTree = "<group>"; };
+		43BA69BE185DDCB900526D8E /* CGDataConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGDataConsumer.h; sourceTree = "<group>"; };
+		43BA69BF185DDCB900526D8E /* CGDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGDataProvider.h; sourceTree = "<group>"; };
+		43BA69C0185DDCB900526D8E /* CGEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGEvent.h; sourceTree = "<group>"; };
+		43BA69C1185DDCB900526D8E /* CGEventType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGEventType.h; sourceTree = "<group>"; };
+		43BA69C2185DDCB900526D8E /* CGFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGFont.h; sourceTree = "<group>"; };
+		43BA69C3185DDCB900526D8E /* CGFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGFunction.h; sourceTree = "<group>"; };
+		43BA69C4185DDCB900526D8E /* CGGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGeometry.h; sourceTree = "<group>"; };
+		43BA69C5185DDCB900526D8E /* CGGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGradient.h; sourceTree = "<group>"; };
+		43BA69C6185DDCB900526D8E /* CGImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGImage.h; sourceTree = "<group>"; };
+		43BA69C7185DDCB900526D8E /* CGImageDestination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGImageDestination.h; sourceTree = "<group>"; };
+		43BA69C8185DDCB900526D8E /* CGImageSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGImageSource.h; sourceTree = "<group>"; };
+		43BA69C9185DDCB900526D8E /* CGLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGLayer.h; sourceTree = "<group>"; };
+		43BA69CA185DDCB900526D8E /* CGPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPath.h; sourceTree = "<group>"; };
+		43BA69CB185DDCB900526D8E /* CGPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPattern.h; sourceTree = "<group>"; };
+		43BA69CC185DDCB900526D8E /* CGPDFArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPDFArray.h; sourceTree = "<group>"; };
+		43BA69CD185DDCB900526D8E /* CGPDFContentStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPDFContentStream.h; sourceTree = "<group>"; };
+		43BA69CE185DDCB900526D8E /* CGPDFContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPDFContext.h; sourceTree = "<group>"; };
+		43BA69CF185DDCB900526D8E /* CGPDFDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPDFDictionary.h; sourceTree = "<group>"; };
+		43BA69D0185DDCB900526D8E /* CGPDFDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPDFDocument.h; sourceTree = "<group>"; };
+		43BA69D1185DDCB900526D8E /* CGPDFObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPDFObject.h; sourceTree = "<group>"; };
+		43BA69D2185DDCB900526D8E /* CGPDFOperatorTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPDFOperatorTable.h; sourceTree = "<group>"; };
+		43BA69D3185DDCB900526D8E /* CGPDFPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPDFPage.h; sourceTree = "<group>"; };
+		43BA69D4185DDCB900526D8E /* CGPDFScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPDFScanner.h; sourceTree = "<group>"; };
+		43BA69D5185DDCB900526D8E /* CGPDFStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPDFStream.h; sourceTree = "<group>"; };
+		43BA69D6185DDCB900526D8E /* CGPDFString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPDFString.h; sourceTree = "<group>"; };
+		43BA69D7185DDCB900526D8E /* CGPSConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPSConverter.h; sourceTree = "<group>"; };
+		43BA69D8185DDCB900526D8E /* CGShading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGShading.h; sourceTree = "<group>"; };
+		43BA69D9185DDCB900526D8E /* CoreGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreGraphics.h; sourceTree = "<group>"; };
+		43BA69DA185DDCB900526D8E /* OPPostScriptContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPPostScriptContext.h; sourceTree = "<group>"; };
+		43BA69DB185DDCB900526D8E /* OPSVGContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPSVGContext.h; sourceTree = "<group>"; };
+		43BA6A22185DDCDD00526D8E /* coated_FOGRA39L_argl.icc */ = {isa = PBXFileReference; lastKnownFileType = file; path = coated_FOGRA39L_argl.icc; sourceTree = "<group>"; };
+		43BA6A23185DDCDD00526D8E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		43BA6A2F185DDD0E00526D8E /* CairoFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CairoFont.h; sourceTree = "<group>"; };
+		43BA6A30185DDD0E00526D8E /* CairoFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CairoFont.m; sourceTree = "<group>"; };
+		43BA6A31185DDD0E00526D8E /* CairoFontWin32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CairoFontWin32.h; sourceTree = "<group>"; };
+		43BA6A32185DDD0E00526D8E /* CairoFontWin32.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CairoFontWin32.m; sourceTree = "<group>"; };
+		43BA6A33185DDD0E00526D8E /* CairoFontX11.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CairoFontX11.h; sourceTree = "<group>"; };
+		43BA6A34185DDD0E00526D8E /* CairoFontX11.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CairoFontX11.m; sourceTree = "<group>"; };
+		43BA6A35185DDD0E00526D8E /* StandardGlyphNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardGlyphNames.h; sourceTree = "<group>"; };
+		43BA6A36185DDD0E00526D8E /* StandardGlyphNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardGlyphNames.m; sourceTree = "<group>"; };
+		43BA6A37185DDD0E00526D8E /* CGAffineTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGAffineTransform.m; sourceTree = "<group>"; };
+		43BA6A38185DDD0E00526D8E /* CGBitmapContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGBitmapContext.m; sourceTree = "<group>"; };
+		43BA6A39185DDD0E00526D8E /* CGColor-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGColor-private.h"; sourceTree = "<group>"; };
+		43BA6A3A185DDD0E00526D8E /* CGColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGColor.m; sourceTree = "<group>"; };
+		43BA6A3B185DDD0E00526D8E /* CGColorSpace-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGColorSpace-private.h"; sourceTree = "<group>"; };
+		43BA6A3C185DDD0E00526D8E /* CGColorSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGColorSpace.m; sourceTree = "<group>"; };
+		43BA6A3D185DDD0E00526D8E /* CGContext+GState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGContext+GState.m"; sourceTree = "<group>"; };
+		43BA6A3E185DDD0E00526D8E /* CGContext-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGContext-private.h"; sourceTree = "<group>"; };
+		43BA6A3F185DDD0E00526D8E /* CGContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGContext.m; sourceTree = "<group>"; };
+		43BA6A40185DDD0E00526D8E /* CGDataConsumer-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGDataConsumer-private.h"; sourceTree = "<group>"; };
+		43BA6A41185DDD0E00526D8E /* CGDataConsumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGDataConsumer.m; sourceTree = "<group>"; };
+		43BA6A42185DDD0E00526D8E /* CGDataProvider-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGDataProvider-private.h"; sourceTree = "<group>"; };
+		43BA6A43185DDD0E00526D8E /* CGDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGDataProvider.m; sourceTree = "<group>"; };
+		43BA6A44185DDD0E00526D8E /* CGFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGFont.m; sourceTree = "<group>"; };
+		43BA6A45185DDD0E00526D8E /* CGFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGFunction.m; sourceTree = "<group>"; };
+		43BA6A46185DDD0E00526D8E /* CGGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGGeometry.m; sourceTree = "<group>"; };
+		43BA6A47185DDD0E00526D8E /* CGGradient-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGGradient-private.h"; sourceTree = "<group>"; };
+		43BA6A48185DDD0E00526D8E /* CGGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGGradient.m; sourceTree = "<group>"; };
+		43BA6A49185DDD0E00526D8E /* CGImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGImage.m; sourceTree = "<group>"; };
+		43BA6A4A185DDD0E00526D8E /* CGImageDestination-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGImageDestination-private.h"; sourceTree = "<group>"; };
+		43BA6A4B185DDD0E00526D8E /* CGImageDestination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGImageDestination.m; sourceTree = "<group>"; };
+		43BA6A4C185DDD0E00526D8E /* CGImageSource-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGImageSource-private.h"; sourceTree = "<group>"; };
+		43BA6A4D185DDD0E00526D8E /* CGImageSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGImageSource.m; sourceTree = "<group>"; };
+		43BA6A4E185DDD0E00526D8E /* CGLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGLayer.m; sourceTree = "<group>"; };
+		43BA6A4F185DDD0E00526D8E /* CGPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPath.m; sourceTree = "<group>"; };
+		43BA6A50185DDD0E00526D8E /* CGPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPattern.m; sourceTree = "<group>"; };
+		43BA6A51185DDD0E00526D8E /* CGPDFArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPDFArray.m; sourceTree = "<group>"; };
+		43BA6A52185DDD0E00526D8E /* CGPDFContentStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPDFContentStream.m; sourceTree = "<group>"; };
+		43BA6A53185DDD0E00526D8E /* CGPDFContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPDFContext.m; sourceTree = "<group>"; };
+		43BA6A54185DDD0E00526D8E /* CGPDFDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPDFDictionary.m; sourceTree = "<group>"; };
+		43BA6A55185DDD0E00526D8E /* CGPDFDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPDFDocument.m; sourceTree = "<group>"; };
+		43BA6A56185DDD0E00526D8E /* CGPDFObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPDFObject.m; sourceTree = "<group>"; };
+		43BA6A57185DDD0E00526D8E /* CGPDFOperatorTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPDFOperatorTable.m; sourceTree = "<group>"; };
+		43BA6A58185DDD0E00526D8E /* CGPDFPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPDFPage.m; sourceTree = "<group>"; };
+		43BA6A59185DDD0E00526D8E /* CGPDFScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPDFScanner.m; sourceTree = "<group>"; };
+		43BA6A5A185DDD0E00526D8E /* CGPDFStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPDFStream.m; sourceTree = "<group>"; };
+		43BA6A5B185DDD0E00526D8E /* CGPDFString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPDFString.m; sourceTree = "<group>"; };
+		43BA6A5C185DDD0E00526D8E /* CGPSConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPSConverter.m; sourceTree = "<group>"; };
+		43BA6A5D185DDD0E00526D8E /* CGShading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGShading.m; sourceTree = "<group>"; };
+		43BA6A60185DDD0E00526D8E /* OPImageCodecJPEG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPImageCodecJPEG.m; sourceTree = "<group>"; };
+		43BA6A61185DDD0E00526D8E /* OPImageCodecPNG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPImageCodecPNG.m; sourceTree = "<group>"; };
+		43BA6A62185DDD0E00526D8E /* OPImageCodecTIFF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPImageCodecTIFF.m; sourceTree = "<group>"; };
+		43BA6A64185DDD0E00526D8E /* CGFontInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGFontInternal.h; sourceTree = "<group>"; };
+		43BA6AC8185DDD0E00526D8E /* opal-gles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "opal-gles.m"; sourceTree = "<group>"; };
+		43BA6AC9185DDD0E00526D8E /* opal-win32.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "opal-win32.m"; sourceTree = "<group>"; };
+		43BA6ACA185DDD0E00526D8E /* opal-x11.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "opal-x11.m"; sourceTree = "<group>"; };
+		43BA6ACB185DDD0E00526D8E /* OPColorSpaceIndexed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPColorSpaceIndexed.h; sourceTree = "<group>"; };
+		43BA6ACC185DDD0E00526D8E /* OPColorSpaceIndexed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPColorSpaceIndexed.m; sourceTree = "<group>"; };
+		43BA6ACD185DDD0E00526D8E /* OPColorSpaceLCMS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPColorSpaceLCMS.h; sourceTree = "<group>"; };
+		43BA6ACE185DDD0E00526D8E /* OPColorSpaceLCMS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPColorSpaceLCMS.m; sourceTree = "<group>"; };
+		43BA6ACF185DDD0E00526D8E /* OPColorTransformLCMS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPColorTransformLCMS.h; sourceTree = "<group>"; };
+		43BA6AD0185DDD0E00526D8E /* OPColorTransformLCMS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPColorTransformLCMS.m; sourceTree = "<group>"; };
+		43BA6AD1185DDD0E00526D8E /* OPImageConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPImageConversion.h; sourceTree = "<group>"; };
+		43BA6AD2185DDD0E00526D8E /* OPImageConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPImageConversion.m; sourceTree = "<group>"; };
+		43BA6AD3185DDD0E00526D8E /* OPLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPLogging.h; sourceTree = "<group>"; };
+		43BA6AD4185DDD0E00526D8E /* OPLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPLogging.m; sourceTree = "<group>"; };
+		43BA6AD5185DDD0E00526D8E /* OPPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPPath.h; sourceTree = "<group>"; };
+		43BA6AD6185DDD0E00526D8E /* OPPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPPath.m; sourceTree = "<group>"; };
+		43BA6AD7185DDD0E00526D8E /* OPPostScriptContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPPostScriptContext.m; sourceTree = "<group>"; };
+		43BA6AD8185DDD0E00526D8E /* OPPremultiplyAlpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPPremultiplyAlpha.h; sourceTree = "<group>"; };
+		43BA6AD9185DDD0E00526D8E /* OPPremultiplyAlpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPPremultiplyAlpha.m; sourceTree = "<group>"; };
+		43BA6ADA185DDD0E00526D8E /* OPSVGContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPSVGContext.m; sourceTree = "<group>"; };
+		43BA6CB5185DDDAA00526D8E /* CoreGraphics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreGraphics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43BA6CEF185DE1D100526D8E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = ../../Products/android/Xcode/Platforms/MacOSX.platform/Developer/SDKs/FakeMacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = "<group>"; };
+		43BA6CF2185DE35400526D8E /* Android.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Android.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		43BA6983185DDC4800526D8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43BA6C5A185DDDAA00526D8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BA6CF0185DE1D100526D8E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		43BA697D185DDC4800526D8E = {
+			isa = PBXGroup;
+			children = (
+				43BA6990185DDC4800526D8E /* CoreGraphics */,
+				43BA6989185DDC4800526D8E /* Frameworks */,
+				43BA6988185DDC4800526D8E /* Products */,
+				43BA69B5185DDC9E00526D8E /* Android */,
+				43BA6CF1185DE35400526D8E /* xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		43BA6988185DDC4800526D8E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43BA6987185DDC4800526D8E /* CoreGraphics.framework */,
+				43BA6CB5185DDDAA00526D8E /* CoreGraphics.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43BA6989185DDC4800526D8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43BA6CEF185DE1D100526D8E /* Foundation.framework */,
+				43BA698C185DDC4800526D8E /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43BA698C185DDC4800526D8E /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		43BA6990185DDC4800526D8E /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				43BA69B6185DDCB900526D8E /* Headers */,
+				43BA6A26185DDD0E00526D8E /* Source */,
+				43BA6A21185DDCDD00526D8E /* Resources */,
+				43BA6991185DDC4800526D8E /* Supporting Files */,
+			);
+			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		43BA6991185DDC4800526D8E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				43BA6992185DDC4800526D8E /* CoreGraphics-Info.plist */,
+				43BA6993185DDC4800526D8E /* InfoPlist.strings */,
+				43BA6996185DDC4800526D8E /* CoreGraphics-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		43BA69B5185DDC9E00526D8E /* Android */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Android;
+			sourceTree = "<group>";
+		};
+		43BA69B6185DDCB900526D8E /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				43BA69B7185DDCB900526D8E /* CoreGraphics */,
+			);
+			name = Headers;
+			path = "gnustep-opal/Headers";
+			sourceTree = SOURCE_ROOT;
+		};
+		43BA69B7185DDCB900526D8E /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				43BA69B8185DDCB900526D8E /* CGAffineTransform.h */,
+				43BA69B9185DDCB900526D8E /* CGBase.h */,
+				43BA69BA185DDCB900526D8E /* CGBitmapContext.h */,
+				43BA69BB185DDCB900526D8E /* CGColor.h */,
+				43BA69BC185DDCB900526D8E /* CGColorSpace.h */,
+				43BA69BD185DDCB900526D8E /* CGContext.h */,
+				43BA69BE185DDCB900526D8E /* CGDataConsumer.h */,
+				43BA69BF185DDCB900526D8E /* CGDataProvider.h */,
+				43BA69C0185DDCB900526D8E /* CGEvent.h */,
+				43BA69C1185DDCB900526D8E /* CGEventType.h */,
+				43BA69C2185DDCB900526D8E /* CGFont.h */,
+				43BA69C3185DDCB900526D8E /* CGFunction.h */,
+				43BA69C4185DDCB900526D8E /* CGGeometry.h */,
+				43BA69C5185DDCB900526D8E /* CGGradient.h */,
+				43BA69C6185DDCB900526D8E /* CGImage.h */,
+				43BA69C7185DDCB900526D8E /* CGImageDestination.h */,
+				43BA69C8185DDCB900526D8E /* CGImageSource.h */,
+				43BA69C9185DDCB900526D8E /* CGLayer.h */,
+				43BA69CA185DDCB900526D8E /* CGPath.h */,
+				43BA69CB185DDCB900526D8E /* CGPattern.h */,
+				43BA69CC185DDCB900526D8E /* CGPDFArray.h */,
+				43BA69CD185DDCB900526D8E /* CGPDFContentStream.h */,
+				43BA69CE185DDCB900526D8E /* CGPDFContext.h */,
+				43BA69CF185DDCB900526D8E /* CGPDFDictionary.h */,
+				43BA69D0185DDCB900526D8E /* CGPDFDocument.h */,
+				43BA69D1185DDCB900526D8E /* CGPDFObject.h */,
+				43BA69D2185DDCB900526D8E /* CGPDFOperatorTable.h */,
+				43BA69D3185DDCB900526D8E /* CGPDFPage.h */,
+				43BA69D4185DDCB900526D8E /* CGPDFScanner.h */,
+				43BA69D5185DDCB900526D8E /* CGPDFStream.h */,
+				43BA69D6185DDCB900526D8E /* CGPDFString.h */,
+				43BA69D7185DDCB900526D8E /* CGPSConverter.h */,
+				43BA69D8185DDCB900526D8E /* CGShading.h */,
+				43BA69D9185DDCB900526D8E /* CoreGraphics.h */,
+				43BA69DA185DDCB900526D8E /* OPPostScriptContext.h */,
+				43BA69DB185DDCB900526D8E /* OPSVGContext.h */,
+			);
+			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		43BA6A21185DDCDD00526D8E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				43BA6A22185DDCDD00526D8E /* coated_FOGRA39L_argl.icc */,
+				43BA6A23185DDCDD00526D8E /* LICENSE */,
+			);
+			name = Resources;
+			path = "gnustep-opal/Resources";
+			sourceTree = SOURCE_ROOT;
+		};
+		43BA6A26185DDD0E00526D8E /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				43BA6A2D185DDD0E00526D8E /* OpalGraphics */,
+			);
+			name = Source;
+			path = "gnustep-opal/Source";
+			sourceTree = SOURCE_ROOT;
+		};
+		43BA6A2D185DDD0E00526D8E /* OpalGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				43BA6A2E185DDD0E00526D8E /* cairo */,
+				43BA6A37185DDD0E00526D8E /* CGAffineTransform.m */,
+				43BA6A38185DDD0E00526D8E /* CGBitmapContext.m */,
+				43BA6A39185DDD0E00526D8E /* CGColor-private.h */,
+				43BA6A3A185DDD0E00526D8E /* CGColor.m */,
+				43BA6A3B185DDD0E00526D8E /* CGColorSpace-private.h */,
+				43BA6A3C185DDD0E00526D8E /* CGColorSpace.m */,
+				43BA6A3D185DDD0E00526D8E /* CGContext+GState.m */,
+				43BA6A3E185DDD0E00526D8E /* CGContext-private.h */,
+				43BA6A3F185DDD0E00526D8E /* CGContext.m */,
+				43BA6A40185DDD0E00526D8E /* CGDataConsumer-private.h */,
+				43BA6A41185DDD0E00526D8E /* CGDataConsumer.m */,
+				43BA6A42185DDD0E00526D8E /* CGDataProvider-private.h */,
+				43BA6A43185DDD0E00526D8E /* CGDataProvider.m */,
+				43BA6A44185DDD0E00526D8E /* CGFont.m */,
+				43BA6A45185DDD0E00526D8E /* CGFunction.m */,
+				43BA6A46185DDD0E00526D8E /* CGGeometry.m */,
+				43BA6A47185DDD0E00526D8E /* CGGradient-private.h */,
+				43BA6A48185DDD0E00526D8E /* CGGradient.m */,
+				43BA6A49185DDD0E00526D8E /* CGImage.m */,
+				43BA6A4A185DDD0E00526D8E /* CGImageDestination-private.h */,
+				43BA6A4B185DDD0E00526D8E /* CGImageDestination.m */,
+				43BA6A4C185DDD0E00526D8E /* CGImageSource-private.h */,
+				43BA6A4D185DDD0E00526D8E /* CGImageSource.m */,
+				43BA6A4E185DDD0E00526D8E /* CGLayer.m */,
+				43BA6A4F185DDD0E00526D8E /* CGPath.m */,
+				43BA6A50185DDD0E00526D8E /* CGPattern.m */,
+				43BA6A51185DDD0E00526D8E /* CGPDFArray.m */,
+				43BA6A52185DDD0E00526D8E /* CGPDFContentStream.m */,
+				43BA6A53185DDD0E00526D8E /* CGPDFContext.m */,
+				43BA6A54185DDD0E00526D8E /* CGPDFDictionary.m */,
+				43BA6A55185DDD0E00526D8E /* CGPDFDocument.m */,
+				43BA6A56185DDD0E00526D8E /* CGPDFObject.m */,
+				43BA6A57185DDD0E00526D8E /* CGPDFOperatorTable.m */,
+				43BA6A58185DDD0E00526D8E /* CGPDFPage.m */,
+				43BA6A59185DDD0E00526D8E /* CGPDFScanner.m */,
+				43BA6A5A185DDD0E00526D8E /* CGPDFStream.m */,
+				43BA6A5B185DDD0E00526D8E /* CGPDFString.m */,
+				43BA6A5C185DDD0E00526D8E /* CGPSConverter.m */,
+				43BA6A5D185DDD0E00526D8E /* CGShading.m */,
+				43BA6A5F185DDD0E00526D8E /* image */,
+				43BA6A63185DDD0E00526D8E /* internal */,
+				43BA6AC8185DDD0E00526D8E /* opal-gles.m */,
+				43BA6AC9185DDD0E00526D8E /* opal-win32.m */,
+				43BA6ACA185DDD0E00526D8E /* opal-x11.m */,
+				43BA6ACB185DDD0E00526D8E /* OPColorSpaceIndexed.h */,
+				43BA6ACC185DDD0E00526D8E /* OPColorSpaceIndexed.m */,
+				43BA6ACD185DDD0E00526D8E /* OPColorSpaceLCMS.h */,
+				43BA6ACE185DDD0E00526D8E /* OPColorSpaceLCMS.m */,
+				43BA6ACF185DDD0E00526D8E /* OPColorTransformLCMS.h */,
+				43BA6AD0185DDD0E00526D8E /* OPColorTransformLCMS.m */,
+				43BA6AD1185DDD0E00526D8E /* OPImageConversion.h */,
+				43BA6AD2185DDD0E00526D8E /* OPImageConversion.m */,
+				43BA6AD3185DDD0E00526D8E /* OPLogging.h */,
+				43BA6AD4185DDD0E00526D8E /* OPLogging.m */,
+				43BA6AD5185DDD0E00526D8E /* OPPath.h */,
+				43BA6AD6185DDD0E00526D8E /* OPPath.m */,
+				43BA6AD7185DDD0E00526D8E /* OPPostScriptContext.m */,
+				43BA6AD8185DDD0E00526D8E /* OPPremultiplyAlpha.h */,
+				43BA6AD9185DDD0E00526D8E /* OPPremultiplyAlpha.m */,
+				43BA6ADA185DDD0E00526D8E /* OPSVGContext.m */,
+			);
+			path = OpalGraphics;
+			sourceTree = "<group>";
+		};
+		43BA6A2E185DDD0E00526D8E /* cairo */ = {
+			isa = PBXGroup;
+			children = (
+				43BA6A2F185DDD0E00526D8E /* CairoFont.h */,
+				43BA6A30185DDD0E00526D8E /* CairoFont.m */,
+				43BA6A31185DDD0E00526D8E /* CairoFontWin32.h */,
+				43BA6A32185DDD0E00526D8E /* CairoFontWin32.m */,
+				43BA6A33185DDD0E00526D8E /* CairoFontX11.h */,
+				43BA6A34185DDD0E00526D8E /* CairoFontX11.m */,
+				43BA6A35185DDD0E00526D8E /* StandardGlyphNames.h */,
+				43BA6A36185DDD0E00526D8E /* StandardGlyphNames.m */,
+			);
+			path = cairo;
+			sourceTree = "<group>";
+		};
+		43BA6A5F185DDD0E00526D8E /* image */ = {
+			isa = PBXGroup;
+			children = (
+				43BA6A60185DDD0E00526D8E /* OPImageCodecJPEG.m */,
+				43BA6A61185DDD0E00526D8E /* OPImageCodecPNG.m */,
+				43BA6A62185DDD0E00526D8E /* OPImageCodecTIFF.m */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		43BA6A63185DDD0E00526D8E /* internal */ = {
+			isa = PBXGroup;
+			children = (
+				43BA6A64185DDD0E00526D8E /* CGFontInternal.h */,
+			);
+			path = internal;
+			sourceTree = "<group>";
+		};
+		43BA6CF1185DE35400526D8E /* xcconfig */ = {
+			isa = PBXGroup;
+			children = (
+				43BA6CF2185DE35400526D8E /* Android.xcconfig */,
+			);
+			path = xcconfig;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		43BA6984185DDC4800526D8E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BA69F1185DDCB900526D8E /* CGColorSpace.h in Headers */,
+				43BA6B2F185DDD0E00526D8E /* CairoFontX11.h in Headers */,
+				43BA6A05185DDCB900526D8E /* CGPDFDocument.h in Headers */,
+				43BA6B46185DDD0E00526D8E /* CGImageDestination-private.h in Headers */,
+				43BA69F6185DDCB900526D8E /* CGEventType.h in Headers */,
+				43BA69F0185DDCB900526D8E /* CGColor.h in Headers */,
+				43BA6BCB185DDD0E00526D8E /* OPPath.h in Headers */,
+				43BA6A0B185DDCB900526D8E /* CGPDFString.h in Headers */,
+				43BA6A06185DDCB900526D8E /* CGPDFObject.h in Headers */,
+				43BA6B3E185DDD0E00526D8E /* CGDataProvider-private.h in Headers */,
+				43BA6A01185DDCB900526D8E /* CGPDFArray.h in Headers */,
+				43BA6BC7185DDD0E00526D8E /* OPImageConversion.h in Headers */,
+				43BA69F2185DDCB900526D8E /* CGContext.h in Headers */,
+				43BA6A02185DDCB900526D8E /* CGPDFContentStream.h in Headers */,
+				43BA6A0F185DDCB900526D8E /* OPPostScriptContext.h in Headers */,
+				43BA69EF185DDCB900526D8E /* CGBitmapContext.h in Headers */,
+				43BA6BCE185DDD0E00526D8E /* OPPremultiplyAlpha.h in Headers */,
+				43BA6B3C185DDD0E00526D8E /* CGDataConsumer-private.h in Headers */,
+				43BA6A0C185DDCB900526D8E /* CGPSConverter.h in Headers */,
+				43BA6B31185DDD0E00526D8E /* StandardGlyphNames.h in Headers */,
+				43BA69FF185DDCB900526D8E /* CGPath.h in Headers */,
+				43BA69ED185DDCB900526D8E /* CGAffineTransform.h in Headers */,
+				43BA6A04185DDCB900526D8E /* CGPDFDictionary.h in Headers */,
+				43BA6B35185DDD0E00526D8E /* CGColor-private.h in Headers */,
+				43BA6B43185DDD0E00526D8E /* CGGradient-private.h in Headers */,
+				43BA6BC9185DDD0E00526D8E /* OPLogging.h in Headers */,
+				43BA69F7185DDCB900526D8E /* CGFont.h in Headers */,
+				43BA69F5185DDCB900526D8E /* CGEvent.h in Headers */,
+				43BA6B5E185DDD0E00526D8E /* CGFontInternal.h in Headers */,
+				43BA69FA185DDCB900526D8E /* CGGradient.h in Headers */,
+				43BA69FC185DDCB900526D8E /* CGImageDestination.h in Headers */,
+				43BA6A0E185DDCB900526D8E /* CoreGraphics.h in Headers */,
+				43BA69F4185DDCB900526D8E /* CGDataProvider.h in Headers */,
+				43BA6B2D185DDD0E00526D8E /* CairoFontWin32.h in Headers */,
+				43BA69F3185DDCB900526D8E /* CGDataConsumer.h in Headers */,
+				43BA6B2B185DDD0E00526D8E /* CairoFont.h in Headers */,
+				43BA6A08185DDCB900526D8E /* CGPDFPage.h in Headers */,
+				43BA6A07185DDCB900526D8E /* CGPDFOperatorTable.h in Headers */,
+				43BA6A00185DDCB900526D8E /* CGPattern.h in Headers */,
+				43BA6BC5185DDD0E00526D8E /* OPColorTransformLCMS.h in Headers */,
+				43BA6A0A185DDCB900526D8E /* CGPDFStream.h in Headers */,
+				43BA6B37185DDD0E00526D8E /* CGColorSpace-private.h in Headers */,
+				43BA6BC3185DDD0E00526D8E /* OPColorSpaceLCMS.h in Headers */,
+				43BA6BC1185DDD0E00526D8E /* OPColorSpaceIndexed.h in Headers */,
+				43BA69F8185DDCB900526D8E /* CGFunction.h in Headers */,
+				43BA69FD185DDCB900526D8E /* CGImageSource.h in Headers */,
+				43BA6B48185DDD0E00526D8E /* CGImageSource-private.h in Headers */,
+				43BA6A0D185DDCB900526D8E /* CGShading.h in Headers */,
+				43BA6B3A185DDD0E00526D8E /* CGContext-private.h in Headers */,
+				43BA69FE185DDCB900526D8E /* CGLayer.h in Headers */,
+				43BA6A09185DDCB900526D8E /* CGPDFScanner.h in Headers */,
+				43BA6A03185DDCB900526D8E /* CGPDFContext.h in Headers */,
+				43BA6A10185DDCB900526D8E /* OPSVGContext.h in Headers */,
+				43BA69F9185DDCB900526D8E /* CGGeometry.h in Headers */,
+				43BA69EE185DDCB900526D8E /* CGBase.h in Headers */,
+				43BA69FB185DDCB900526D8E /* CGImage.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43BA6C5B185DDDAA00526D8E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BA6C7C185DDDAA00526D8E /* CGAffineTransform.h in Headers */,
+				43BA6CAA185DDDAA00526D8E /* CGBase.h in Headers */,
+				43BA6C75185DDDAA00526D8E /* CGBitmapContext.h in Headers */,
+				43BA6C61185DDDAA00526D8E /* CGColor.h in Headers */,
+				43BA6C5C185DDDAA00526D8E /* CGColorSpace.h in Headers */,
+				43BA6C6C185DDDAA00526D8E /* CGContext.h in Headers */,
+				43BA6C8D185DDDAA00526D8E /* CGDataConsumer.h in Headers */,
+				43BA6C8A185DDDAA00526D8E /* CGDataProvider.h in Headers */,
+				43BA6C82185DDDAA00526D8E /* CGEvent.h in Headers */,
+				43BA6C60185DDDAA00526D8E /* CGEventType.h in Headers */,
+				43BA6C81185DDDAA00526D8E /* CGFont.h in Headers */,
+				43BA6C9B185DDDAA00526D8E /* CGFunction.h in Headers */,
+				43BA6CA7185DDDAA00526D8E /* CGGeometry.h in Headers */,
+				43BA6C84185DDDAA00526D8E /* CGGradient.h in Headers */,
+				43BA6CAB185DDDAA00526D8E /* CGImage.h in Headers */,
+				43BA6C87185DDDAA00526D8E /* CGImageDestination.h in Headers */,
+				43BA6C9C185DDDAA00526D8E /* CGImageSource.h in Headers */,
+				43BA6CA2185DDDAA00526D8E /* CGLayer.h in Headers */,
+				43BA6C7B185DDDAA00526D8E /* CGPath.h in Headers */,
+				43BA6C93185DDDAA00526D8E /* CGPattern.h in Headers */,
+				43BA6C69185DDDAA00526D8E /* CGPDFArray.h in Headers */,
+				43BA6C72185DDDAA00526D8E /* CGPDFContentStream.h in Headers */,
+				43BA6CA5185DDDAA00526D8E /* CGPDFContext.h in Headers */,
+				43BA6C7D185DDDAA00526D8E /* CGPDFDictionary.h in Headers */,
+				43BA6C5E185DDDAA00526D8E /* CGPDFDocument.h in Headers */,
+				43BA6C66185DDDAA00526D8E /* CGPDFObject.h in Headers */,
+				43BA6C91185DDDAA00526D8E /* CGPDFOperatorTable.h in Headers */,
+				43BA6C90185DDDAA00526D8E /* CGPDFPage.h in Headers */,
+				43BA6CA3185DDDAA00526D8E /* CGPDFScanner.h in Headers */,
+				43BA6C96185DDDAA00526D8E /* CGPDFStream.h in Headers */,
+				43BA6C65185DDDAA00526D8E /* CGPDFString.h in Headers */,
+				43BA6C78185DDDAA00526D8E /* CGPSConverter.h in Headers */,
+				43BA6CA0185DDDAA00526D8E /* CGShading.h in Headers */,
+				43BA6C88185DDDAA00526D8E /* CoreGraphics.h in Headers */,
+				43BA6C73185DDDAA00526D8E /* OPPostScriptContext.h in Headers */,
+				43BA6CA6185DDDAA00526D8E /* OPSVGContext.h in Headers */,
+				43BA6C5D185DDDAA00526D8E /* CairoFontX11.h in Headers */,
+				43BA6C5F185DDDAA00526D8E /* CGImageDestination-private.h in Headers */,
+				43BA6C63185DDDAA00526D8E /* OPPath.h in Headers */,
+				43BA6C67185DDDAA00526D8E /* CGDataProvider-private.h in Headers */,
+				43BA6C6B185DDDAA00526D8E /* OPImageConversion.h in Headers */,
+				43BA6C76185DDDAA00526D8E /* OPPremultiplyAlpha.h in Headers */,
+				43BA6C77185DDDAA00526D8E /* CGDataConsumer-private.h in Headers */,
+				43BA6C79185DDDAA00526D8E /* StandardGlyphNames.h in Headers */,
+				43BA6C7E185DDDAA00526D8E /* CGColor-private.h in Headers */,
+				43BA6C7F185DDDAA00526D8E /* CGGradient-private.h in Headers */,
+				43BA6C80185DDDAA00526D8E /* OPLogging.h in Headers */,
+				43BA6C83185DDDAA00526D8E /* CGFontInternal.h in Headers */,
+				43BA6C8B185DDDAA00526D8E /* CairoFontWin32.h in Headers */,
+				43BA6C8E185DDDAA00526D8E /* CairoFont.h in Headers */,
+				43BA6C94185DDDAA00526D8E /* OPColorTransformLCMS.h in Headers */,
+				43BA6C97185DDDAA00526D8E /* CGColorSpace-private.h in Headers */,
+				43BA6C98185DDDAA00526D8E /* OPColorSpaceLCMS.h in Headers */,
+				43BA6C9A185DDDAA00526D8E /* OPColorSpaceIndexed.h in Headers */,
+				43BA6C9F185DDDAA00526D8E /* CGImageSource-private.h in Headers */,
+				43BA6CA1185DDDAA00526D8E /* CGContext-private.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		43BA6986185DDC4800526D8E /* CoreGraphics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43BA69AF185DDC4800526D8E /* Build configuration list for PBXNativeTarget "CoreGraphics" */;
+			buildPhases = (
+				43BA6982185DDC4800526D8E /* Sources */,
+				43BA6983185DDC4800526D8E /* Frameworks */,
+				43BA6984185DDC4800526D8E /* Headers */,
+				43BA6985185DDC4800526D8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoreGraphics;
+			productName = CoreGraphics;
+			productReference = 43BA6987185DDC4800526D8E /* CoreGraphics.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		43BA6C15185DDDAA00526D8E /* CoreGraphics-Android */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43BA6CB2185DDDAA00526D8E /* Build configuration list for PBXNativeTarget "CoreGraphics-Android" */;
+			buildPhases = (
+				43BA6C16185DDDAA00526D8E /* Sources */,
+				43BA6C5A185DDDAA00526D8E /* Frameworks */,
+				43BA6C5B185DDDAA00526D8E /* Headers */,
+				43BA6CAD185DDDAA00526D8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CoreGraphics-Android";
+			productName = CoreGraphics;
+			productReference = 43BA6CB5185DDDAA00526D8E /* CoreGraphics.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		43BA697E185DDC4800526D8E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Shanghai TinyNetwork Inc.";
+			};
+			buildConfigurationList = 43BA6981185DDC4800526D8E /* Build configuration list for PBXProject "CoreGraphics" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 43BA697D185DDC4800526D8E;
+			productRefGroup = 43BA6988185DDC4800526D8E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				43BA6986185DDC4800526D8E /* CoreGraphics */,
+				43BA6C15185DDDAA00526D8E /* CoreGraphics-Android */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		43BA6985185DDC4800526D8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BA6A25185DDCDD00526D8E /* LICENSE in Resources */,
+				43BA6A24185DDCDD00526D8E /* coated_FOGRA39L_argl.icc in Resources */,
+				43BA6995185DDC4800526D8E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43BA6CAD185DDDAA00526D8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BA6CAE185DDDAA00526D8E /* LICENSE in Resources */,
+				43BA6CB0185DDDAA00526D8E /* coated_FOGRA39L_argl.icc in Resources */,
+				43BA6CB1185DDDAA00526D8E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43BA6982185DDC4800526D8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BA6B5B185DDD0E00526D8E /* OPImageCodecJPEG.m in Sources */,
+				43BA6B58185DDD0E00526D8E /* CGPSConverter.m in Sources */,
+				43BA6B47185DDD0E00526D8E /* CGImageDestination.m in Sources */,
+				43BA6B38185DDD0E00526D8E /* CGColorSpace.m in Sources */,
+				43BA6BCF185DDD0E00526D8E /* OPPremultiplyAlpha.m in Sources */,
+				43BA6B56185DDD0E00526D8E /* CGPDFStream.m in Sources */,
+				43BA6B57185DDD0E00526D8E /* CGPDFString.m in Sources */,
+				43BA6B50185DDD0E00526D8E /* CGPDFDictionary.m in Sources */,
+				43BA6B53185DDD0E00526D8E /* CGPDFOperatorTable.m in Sources */,
+				43BA6B4D185DDD0E00526D8E /* CGPDFArray.m in Sources */,
+				43BA6B5C185DDD0E00526D8E /* OPImageCodecPNG.m in Sources */,
+				43BA6B45185DDD0E00526D8E /* CGImage.m in Sources */,
+				43BA6B55185DDD0E00526D8E /* CGPDFScanner.m in Sources */,
+				43BA6B34185DDD0E00526D8E /* CGBitmapContext.m in Sources */,
+				43BA6BD0185DDD0E00526D8E /* OPSVGContext.m in Sources */,
+				43BA6B42185DDD0E00526D8E /* CGGeometry.m in Sources */,
+				43BA6B41185DDD0E00526D8E /* CGFunction.m in Sources */,
+				43BA6B33185DDD0E00526D8E /* CGAffineTransform.m in Sources */,
+				43BA6B5D185DDD0E00526D8E /* OPImageCodecTIFF.m in Sources */,
+				43BA6B49185DDD0E00526D8E /* CGImageSource.m in Sources */,
+				43BA6B32185DDD0E00526D8E /* StandardGlyphNames.m in Sources */,
+				43BA6BC2185DDD0E00526D8E /* OPColorSpaceIndexed.m in Sources */,
+				43BA6BCD185DDD0E00526D8E /* OPPostScriptContext.m in Sources */,
+				43BA6B3D185DDD0E00526D8E /* CGDataConsumer.m in Sources */,
+				43BA6B51185DDD0E00526D8E /* CGPDFDocument.m in Sources */,
+				43BA6B52185DDD0E00526D8E /* CGPDFObject.m in Sources */,
+				43BA6B59185DDD0E00526D8E /* CGShading.m in Sources */,
+				43BA6B3B185DDD0E00526D8E /* CGContext.m in Sources */,
+				43BA6B2C185DDD0E00526D8E /* CairoFont.m in Sources */,
+				43BA6B40185DDD0E00526D8E /* CGFont.m in Sources */,
+				43BA6BCA185DDD0E00526D8E /* OPLogging.m in Sources */,
+				43BA6BC4185DDD0E00526D8E /* OPColorSpaceLCMS.m in Sources */,
+				43BA6B4E185DDD0E00526D8E /* CGPDFContentStream.m in Sources */,
+				43BA6B4B185DDD0E00526D8E /* CGPath.m in Sources */,
+				43BA6B44185DDD0E00526D8E /* CGGradient.m in Sources */,
+				43BA6B4F185DDD0E00526D8E /* CGPDFContext.m in Sources */,
+				43BA6B3F185DDD0E00526D8E /* CGDataProvider.m in Sources */,
+				43BA6B4A185DDD0E00526D8E /* CGLayer.m in Sources */,
+				43BA6BC8185DDD0E00526D8E /* OPImageConversion.m in Sources */,
+				43BA6B36185DDD0E00526D8E /* CGColor.m in Sources */,
+				43BA6BCC185DDD0E00526D8E /* OPPath.m in Sources */,
+				43BA6B54185DDD0E00526D8E /* CGPDFPage.m in Sources */,
+				43BA6BC6185DDD0E00526D8E /* OPColorTransformLCMS.m in Sources */,
+				43BA6B4C185DDD0E00526D8E /* CGPattern.m in Sources */,
+				43BA6B39185DDD0E00526D8E /* CGContext+GState.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43BA6C16185DDDAA00526D8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BA6C17185DDDAA00526D8E /* OPImageCodecJPEG.m in Sources */,
+				43BA6C18185DDDAA00526D8E /* CGPSConverter.m in Sources */,
+				43BA6C19185DDDAA00526D8E /* CGImageDestination.m in Sources */,
+				43BA6C1A185DDDAA00526D8E /* CGColorSpace.m in Sources */,
+				43BA6C1B185DDDAA00526D8E /* OPPremultiplyAlpha.m in Sources */,
+				43BA6C1C185DDDAA00526D8E /* CGPDFStream.m in Sources */,
+				43BA6C1D185DDDAA00526D8E /* CGPDFString.m in Sources */,
+				43BA6C1F185DDDAA00526D8E /* CGPDFDictionary.m in Sources */,
+				43BA6C20185DDDAA00526D8E /* CGPDFOperatorTable.m in Sources */,
+				43BA6C21185DDDAA00526D8E /* CGPDFArray.m in Sources */,
+				43BA6C22185DDDAA00526D8E /* OPImageCodecPNG.m in Sources */,
+				43BA6C23185DDDAA00526D8E /* CGImage.m in Sources */,
+				43BA6C26185DDDAA00526D8E /* CGPDFScanner.m in Sources */,
+				43BA6C27185DDDAA00526D8E /* CGBitmapContext.m in Sources */,
+				43BA6C29185DDDAA00526D8E /* OPSVGContext.m in Sources */,
+				43BA6C2C185DDDAA00526D8E /* CGGeometry.m in Sources */,
+				43BA6C2D185DDDAA00526D8E /* CGFunction.m in Sources */,
+				43BA6C2F185DDDAA00526D8E /* CGAffineTransform.m in Sources */,
+				43BA6C30185DDDAA00526D8E /* OPImageCodecTIFF.m in Sources */,
+				43BA6C31185DDDAA00526D8E /* CGImageSource.m in Sources */,
+				43BA6C33185DDDAA00526D8E /* StandardGlyphNames.m in Sources */,
+				43BA6C34185DDDAA00526D8E /* OPColorSpaceIndexed.m in Sources */,
+				43BA6C37185DDDAA00526D8E /* OPPostScriptContext.m in Sources */,
+				43BA6C38185DDDAA00526D8E /* CGDataConsumer.m in Sources */,
+				43BA6C3C185DDDAA00526D8E /* CGPDFDocument.m in Sources */,
+				43BA6C3D185DDDAA00526D8E /* CGPDFObject.m in Sources */,
+				43BA6C3F185DDDAA00526D8E /* CGShading.m in Sources */,
+				43BA6C40185DDDAA00526D8E /* CGContext.m in Sources */,
+				43BA6C41185DDDAA00526D8E /* CairoFont.m in Sources */,
+				43BA6C42185DDDAA00526D8E /* CGFont.m in Sources */,
+				43BA6C46185DDDAA00526D8E /* OPLogging.m in Sources */,
+				43BA6C47185DDDAA00526D8E /* OPColorSpaceLCMS.m in Sources */,
+				43BA6C48185DDDAA00526D8E /* CGPDFContentStream.m in Sources */,
+				43BA6C4A185DDDAA00526D8E /* CGPath.m in Sources */,
+				43BA6C4B185DDDAA00526D8E /* CGGradient.m in Sources */,
+				43BA6C4C185DDDAA00526D8E /* CGPDFContext.m in Sources */,
+				43BA6C4D185DDDAA00526D8E /* CGDataProvider.m in Sources */,
+				43BA6C4F185DDDAA00526D8E /* CGLayer.m in Sources */,
+				43BA6C50185DDDAA00526D8E /* OPImageConversion.m in Sources */,
+				43BA6C51185DDDAA00526D8E /* CGColor.m in Sources */,
+				43BA6C52185DDDAA00526D8E /* OPPath.m in Sources */,
+				43BA6C53185DDDAA00526D8E /* CGPDFPage.m in Sources */,
+				43BA6C54185DDDAA00526D8E /* OPColorTransformLCMS.m in Sources */,
+				43BA6C55185DDDAA00526D8E /* CGPattern.m in Sources */,
+				43BA6C59185DDDAA00526D8E /* CGContext+GState.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		43BA6993185DDC4800526D8E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43BA6994185DDC4800526D8E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		43BA69AD185DDC4800526D8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		43BA69AE185DDC4800526D8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		43BA69B0185DDC4800526D8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoreGraphics/CoreGraphics-Prefix.pch";
+				INFOPLIST_FILE = "CoreGraphics/CoreGraphics-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		43BA69B1185DDC4800526D8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoreGraphics/CoreGraphics-Prefix.pch";
+				INFOPLIST_FILE = "CoreGraphics/CoreGraphics-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		43BA6CB3185DDDAA00526D8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43BA6CF2185DE35400526D8E /* Android.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoreGraphics/CoreGraphics-Prefix.pch";
+				INFOPLIST_FILE = "CoreGraphics/CoreGraphics-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = "";
+				PRODUCT_NAME = CoreGraphics;
+				SDKROOT = macosx0.0;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		43BA6CB4185DDDAA00526D8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43BA6CF2185DE35400526D8E /* Android.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoreGraphics/CoreGraphics-Prefix.pch";
+				INFOPLIST_FILE = "CoreGraphics/CoreGraphics-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = "";
+				PRODUCT_NAME = CoreGraphics;
+				SDKROOT = macosx0.0;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		43BA6981185DDC4800526D8E /* Build configuration list for PBXProject "CoreGraphics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43BA69AD185DDC4800526D8E /* Debug */,
+				43BA69AE185DDC4800526D8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43BA69AF185DDC4800526D8E /* Build configuration list for PBXNativeTarget "CoreGraphics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43BA69B0185DDC4800526D8E /* Debug */,
+				43BA69B1185DDC4800526D8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43BA6CB2185DDDAA00526D8E /* Build configuration list for PBXNativeTarget "CoreGraphics-Android" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43BA6CB3185DDDAA00526D8E /* Debug */,
+				43BA6CB4185DDDAA00526D8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 43BA697E185DDC4800526D8E /* Project object */;
+}

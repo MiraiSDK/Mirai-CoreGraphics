@@ -35,6 +35,7 @@
 #import "cairo/CairoFontWin32.h"
 #else
 #ifdef ANDROID
+#import "cairo/CairoFontX11.h"
 #else
 #import "cairo/CairoFontX11.h"
 #endif
@@ -48,7 +49,7 @@
   return [CairoFontWin32 class];
 #else
 #ifdef ANDROID
-    return nil;
+    return [CairoFontX11 class];
 #else
   return [CairoFontX11 class];
 #endif

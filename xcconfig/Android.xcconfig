@@ -12,7 +12,7 @@ SDK_LIB_PATH=$(SDK_ROOT)/usr/lib
 DEPLOYMENT_LOCATION = YES
 DSTROOT = /
 INSTALL_PATH = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/FakeMacOSX10.9.sdk/System/Library/Frameworks/
-HEADER_SEARCH_PATHS=$(inherited) /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/FakeMacOSX10.9.sdk/usr/include/cairo/  $(SOURCE_ROOT)/gnustep-opal/Source/OpalGraphics
+HEADER_SEARCH_PATHS=$(inherited) $(SDK_ROOT)/usr/include/cairo/ $(SDK_ROOT)/usr/include/freetype2/  $(SOURCE_ROOT)/gnustep-opal/Source/OpalGraphics
 OTHER_LDFLAGS= $(inherited) -shared -Wl,-z,defs $(SDK_LIB_PATH)/libcairo.a $(SDK_LIB_PATH)/libpixman-1.a -lcpufeatures $(SDK_LIB_PATH)/libfontconfig.a $(SDK_LIB_PATH)/libfreetype.a $(SDK_LIB_PATH)/libexpat.a $(SDK_LIB_PATH)/libxml2.a -lobjc $(SDK_LIB_PATH)/libjpeg.a $(SDK_LIB_PATH)/libpng.a $(SDK_LIB_PATH)/libtiff.a $(SDK_LIB_PATH)/liblcms.a -lgnustl_shared -lobjc -lm -lz -v
 
 LD_DEPENDENCY_INFO_FILE= 

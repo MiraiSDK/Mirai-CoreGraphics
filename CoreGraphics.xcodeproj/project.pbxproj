@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		438462D4188448EB006DA1AA /* CairoFontX11.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BA6A34185DDD0E00526D8E /* CairoFontX11.m */; };
 		43BA6995185DDC4800526D8E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43BA6993185DDC4800526D8E /* InfoPlist.strings */; };
 		43BA69ED185DDCB900526D8E /* CGAffineTransform.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69B8185DDCB900526D8E /* CGAffineTransform.h */; };
 		43BA69EE185DDCB900526D8E /* CGBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BA69B9185DDCB900526D8E /* CGBase.h */; };
@@ -874,6 +875,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				438462D4188448EB006DA1AA /* CairoFontX11.m in Sources */,
 				43BA6C17185DDDAA00526D8E /* OPImageCodecJPEG.m in Sources */,
 				43BA6C18185DDDAA00526D8E /* CGPSConverter.m in Sources */,
 				43BA6C19185DDDAA00526D8E /* CGImageDestination.m in Sources */,

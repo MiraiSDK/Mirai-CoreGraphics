@@ -237,6 +237,10 @@ CGImageSourceRef CGImageSourceCreateWithDataProvider(
   CGDataProviderRef provider,
   CFDictionaryRef options)
 {
+    if (provider == nil) {
+        return nil;
+    }
+    
   const NSUInteger cnt = [sourceClasses count];
   NSString *possibleType = [options valueForKey:
     kCGImageSourceTypeIdentifierHint];

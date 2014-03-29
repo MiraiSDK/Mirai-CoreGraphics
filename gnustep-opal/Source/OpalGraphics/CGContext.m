@@ -821,13 +821,9 @@ void CGContextClearPath(CGContextRef ctx)
   OPLOGCALL("ctx /*%p*/", ctx)
   cairo_status_t cret;
 
-  if (ctx->add->fill_cp)
-    cairo_set_source(ctx->ct, ctx->add->fill_cp);
-  else
-    cairo_set_source(ctx->ct, default_cp);
-  //cairo_set_fill_rule(ctx->ct, CAIRO_FILL_RULE_WINDING);
   cairo_clip(ctx->ct);
-  cairo_clip_preserve(ctx->ct);
+  cairo_set_operator (ctx->ct, CAIRO_OPERATOR_CLEAR);
+  cairo_paint (ctx->ct);
 
   cret = cairo_status(ctx->ct);
   if (cret)
@@ -907,9 +903,11 @@ void CGContextClearRect(CGContextRef ctx, CGRect rect)
 {
   OPLOGCALL("ctx /*%p*/, CGRectMake(%g, %g, %g, %g)", ctx, rect.origin.x, rect.origin.y,
             rect.size.width, rect.size.height)
+    CGContextSaveGState(ctx);
   CGContextBeginPath(ctx);
   CGContextAddRect(ctx, rect);
   CGContextClearPath(ctx);
+    CGContextRestoreGState(ctx);
   OPRESTORELOGGING()
 }
 

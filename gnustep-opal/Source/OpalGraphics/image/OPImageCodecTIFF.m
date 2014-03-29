@@ -183,7 +183,8 @@ static void OPTIFFUnmapProc(thandle_t handle, tdata_t data, toff_t size)
 
 + (void)load
 {
-  [CGImageSource registerSourceClass: self];
+    // disable tiff
+    //[CGImageSource registerSourceClass: self];
 }
 
 + (NSArray *)typeIdentifiers

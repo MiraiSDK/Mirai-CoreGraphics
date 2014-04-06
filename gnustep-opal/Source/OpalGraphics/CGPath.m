@@ -24,6 +24,7 @@
 
 #import <Foundation/NSObject.h>
 #include "CoreGraphics/CGPath.h"
+#include "CoreGraphics/CGContext.h"
 
 #import "OPPath.h"
 
@@ -510,4 +511,22 @@ void CGPathAddEllipseInRect(
   p1 = CGPointMake(originx + width, originy + height / 2 + vdiff);
   p2 = CGPointMake(originx + width / 2 + hdiff, originy + height);
   CGPathAddCurveToPoint(path, m, p1.x, p1.y, p2.x, p2.y, p.x, p.y);
+}
+
+CGPathRef CGPathCreateWithRect(CGRect rect,
+                               const CGAffineTransform *transform)
+{
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathAddRect(path, transform, rect);
+    return path;
+}
+
+CGRect CGPathGetBoundingBox(CGPathRef path)
+{
+    return CGPathGetPathBoundingBox(path);
+}
+
+void CGContextFillEllipseInRect(CGContextRef context, CGRect rect)
+{
+    
 }

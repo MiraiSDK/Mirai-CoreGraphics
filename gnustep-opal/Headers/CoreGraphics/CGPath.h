@@ -85,6 +85,11 @@ CGRect CGPathGetPathBoundingBox(CGPathRef path);
 
 CGPoint CGPathGetCurrentPoint(CGPathRef path);
 
+CGPathRef CGPathCreateWithRect(CGRect rect,
+                               const CGAffineTransform *transform);
+CGRect CGPathGetBoundingBox(CGPathRef path);
+//void CGContextFillEllipseInRect(CGContextRef context, CGRect rect);
+
 bool CGPathContainsPoint(
   CGPathRef path, 
   const CGAffineTransform *m, 

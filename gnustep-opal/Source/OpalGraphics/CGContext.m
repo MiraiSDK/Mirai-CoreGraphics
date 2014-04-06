@@ -1531,6 +1531,60 @@ CGAffineTransform CGContextGetTextMatrix(CGContextRef ctx)
   return ctx->txtmatrix;
 }
 
+void CGContextTestShowText(CGContextRef ctx)
+{
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+    
+    CGAffineTransform identi = CGAffineTransformIdentity;
+    NSLog(@"CGAffineTransformIdentity:{tx:%.5f,ty:%.5f,a:%.5f,b:%.5f,c:%.5f,d:%.5f}",identi.tx,identi.ty,identi.a,identi.b,identi.c,identi.d);
+    
+    cairo_matrix_t identitymatrix;
+    cairo_matrix_init_identity(&identitymatrix);
+
+    NSLog(@"cairo identitymatrix: {tx:%.5f,ty:%.5f,a:%.5f,b:%.5f,c:%.5f,d:%.5f}",identitymatrix.x0,identitymatrix.y0,identitymatrix.xx,identitymatrix.yx,identitymatrix.xy,identitymatrix.yy);
+
+    NSLog(@"ctx->txtmatrix:{tx:%.5f,ty:%.5f,a:%.5f,b:%.5f,c:%.5f,d:%.5f}",ctx->txtmatrix.tx,ctx->txtmatrix.ty,ctx->txtmatrix.a,ctx->txtmatrix.b,ctx->txtmatrix.c,ctx->txtmatrix.d);
+
+
+    const char *cStr = "Hello World\0";
+    cairo_set_source_rgb(ctx->ct, 1, 0, 0);
+    CGContextSelectFont(ctx, "Roboto", 32, kCGEncodingMacRoman);
+    cairo_move_to(ctx->ct, 0, 0);
+    
+    cairo_matrix_t cairotextmatrix, opaltextmatrix;
+    cairo_matrix_init_identity(&cairotextmatrix);
+    
+    cairo_matrix_scale(&cairotextmatrix, 1, -1);
+    cairo_matrix_translate(&cairotextmatrix, 0, -1);
+
+    // working
+    cairo_matrix_scale(&cairotextmatrix, ctx->add->font_size, ctx->add->font_size);
+    cairotextmatrix.x0 = ctx->txtmatrix.tx;
+    cairotextmatrix.y0 = ctx->txtmatrix.ty;
+    NSLog(@"matrix: {tx:%.5f,ty:%.5f,a:%.5f,b:%.5f,c:%.5f,d:%.5f}",cairotextmatrix.x0,cairotextmatrix.y0,cairotextmatrix.xx,cairotextmatrix.yx,cairotextmatrix.xy,cairotextmatrix.yy);
+//    cairo_set_font_matrix(ctx->ct, &cairotextmatrix);
+
+    cairo_matrix_init_identity(&cairotextmatrix);
+    cairo_matrix_scale(&cairotextmatrix, 1, -1);
+    cairo_matrix_translate(&cairotextmatrix, 0, -1);
+    cairo_matrix_scale(&cairotextmatrix, ctx->add->font_size, ctx->add->font_size);
+    cairo_matrix_init(&opaltextmatrix, ctx->txtmatrix.a, ctx->txtmatrix.b, ctx->txtmatrix.c,
+                      ctx->txtmatrix.d, ctx->txtmatrix.tx, ctx->txtmatrix.ty);
+
+    NSLog(@"opaltextmatrix: {tx:%.5f,ty:%.5f,a:%.5f,b:%.5f,c:%.5f,d:%.5f}",opaltextmatrix.x0,opaltextmatrix.y0,opaltextmatrix.xx,opaltextmatrix.yx,opaltextmatrix.xy,opaltextmatrix.yy);
+
+    cairo_matrix_multiply(&cairotextmatrix, &cairotextmatrix, &opaltextmatrix);
+//    cairotextmatrix.x0 = ctx->txtmatrix.tx;
+//    cairotextmatrix.y0 = ctx->txtmatrix.ty;
+    NSLog(@"cairotextmatrix: {tx:%.5f,ty:%.5f,a:%.5f,b:%.5f,c:%.5f,d:%.5f}",cairotextmatrix.x0,cairotextmatrix.y0,cairotextmatrix.xx,cairotextmatrix.yx,cairotextmatrix.xy,cairotextmatrix.yy);
+    cairo_set_font_matrix(ctx->ct, &cairotextmatrix);
+
+//    NSLog(@"cairo_move_to: %d", cairo_status(ctx->ct));
+    cairo_show_text(ctx->ct, cStr);
+//    NSLog(@"cairo_show_text: %d", cairo_status(ctx->ct));
+    
+}
+
 void CGContextShowText(CGContextRef ctx, const char *string, size_t length)
 {
   OPLOGCALL("ctx /*%p*/, \"%s\", %d", ctx, string, length)

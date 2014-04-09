@@ -154,7 +154,20 @@ static boolean gs_fill_input_buffer(j_decompress_ptr cinfo)
 static void gs_skip_input_data(j_decompress_ptr cinfo, long numBytes)
 {
   gs_jpeg_source_ptr src = (gs_jpeg_source_ptr)cinfo->src;
-  OPDataProviderSkipForward(src->dp, numBytes);
+    
+    // skip bytes large than bytes in buffer, refill buffer
+    if (numBytes > src->parent.bytes_in_buffer) {
+        numBytes -= src->parent.bytes_in_buffer;
+        
+        OPDataProviderSkipForward(src->dp, numBytes);
+        
+        // we assume that gs_fill_input_buffer will never return false
+        // so suspension not need be handled
+        gs_fill_input_buffer(cinfo);
+    } else { // skip bytes less then bytes in buffer
+        src->parent.bytes_in_buffer -= numBytes;
+        src->parent.next_input_byte += numBytes;
+    }
 }
 
 static void gs_term_source(j_decompress_ptr cinfo)

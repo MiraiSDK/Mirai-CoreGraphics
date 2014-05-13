@@ -48,7 +48,17 @@
 #ifndef MIN
 #define MIN(a,b) ((a)<(b)?(a):(b))
 #endif
- 
+
+/* Definition of `CG_EXTERN'. */
+
+#if !defined(CG_EXTERN)
+#  if defined(__cplusplus)
+#   define CG_EXTERN extern "C"
+#  else
+#   define CG_EXTERN extern
+#  endif
+#endif /* !defined(CG_EXTERN) */
+
 /* Typedefs for CoreFoundation types */
 
 typedef signed long CFIndex;

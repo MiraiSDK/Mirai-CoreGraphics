@@ -29,6 +29,8 @@
 #import "CGColorSpace-private.h"
 #import "OPImageConversion.h"
 
+#include <CoreFoundation/CFRuntime.h>
+
 const CFStringRef kCGColorWhite = @"kCGColorWhite";
 const CFStringRef kCGColorBlack = @"kCGColorBlack";
 const CFStringRef kCGColorClear = @"kCGColorClear";
@@ -37,8 +39,38 @@ static CGColorRef _whiteColor;
 static CGColorRef _blackColor;
 static CGColorRef _clearColor;
 
+static CFTypeID _kCGColorTypeID = 0;
+
+static CFRuntimeClass CGColorClass = {
+    0,
+    "CGColor",
+    NULL,
+    (CFTypeRef (*)(CFAllocatorRef, CFTypeRef)) CGColorCreateCopy,
+    CGColorFinalize,
+    CGColorEqualToColor,
+    CGColorHash,
+    CGColorCopyFormattingDesc,
+    NULL
+};
+
+void
+CGColorInitialize (void)
+{
+    _kCGColorTypeID = _CFRuntimeRegisterClass (&CGColorClass);
+}
+
 
 @implementation CGColor
+
++ (void)load
+{
+    NSCFInitialize ();
+}
+
++ (void)initialize
+{
+    GSObjCAddClassBehavior (self, [NSCFType class]);
+}
 
 - (id) initWithColorSpace: (CGColorSpaceRef)cs components: (const CGFloat*)components
 {

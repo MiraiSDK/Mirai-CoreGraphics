@@ -26,7 +26,7 @@
 
 /* Data Types */
 
-#ifdef __OBJC__
+#ifdef __IMPLICIT_BRIDGE__
 @class CGPDFContentStream;
 typedef CGPDFContentStream* CGPDFContentStreamRef;
 #else

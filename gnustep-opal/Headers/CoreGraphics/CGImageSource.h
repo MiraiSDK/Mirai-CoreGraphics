@@ -47,7 +47,7 @@ const extern CFStringRef kCGImageSourceCreateThumbnailWithTransform;
 
 /* Data Types */
 
-#ifdef __OBJC__
+#ifdef __IMPLICIT_BRIDGE__
 @class CGImageSource;
 typedef CGImageSource* CGImageSourceRef;
 #else

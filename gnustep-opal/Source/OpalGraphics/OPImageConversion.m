@@ -238,6 +238,47 @@ static bool OPImageFormatForCGFormat(
   return true;
 }
 
+static inline uint8_t
+convert_color_channel (uint8_t src,
+                       uint8_t alpha)
+{
+    return alpha ? (((uint_t)(src) << 8) - src) / alpha : 0;
+}
+
+void
+convert_bgra_to_rgba (uint8_t const* src,
+                      uint8_t*       dst,
+                      int           width,
+                      int           height)
+{
+    // generate a lookup table, speed up about 100%
+    static uint8_t table[65536];
+    static BOOL isTableGenrated = NO;
+    if (!isTableGenrated) {
+        for (unsigned int a = 0; a <= 0xff; a++)
+            for (unsigned int x = 0; x <= 0xff; x++)
+                table[(a << 8) + x] = convert_color_channel (x, a);
+        isTableGenrated = YES;
+    }
+    
+    uint8_t const* src_pixel = src;
+    uint8_t*       dst_pixel = dst;
+    
+    for (int y = 0; y < height; y++)
+        for (int x = 0; x < width; x++)
+        {
+            uint8_t const* row = table + (src_pixel[3] << 8);
+            
+            dst_pixel[0] = row[src_pixel[2]];
+            dst_pixel[1] = row[src_pixel[1]];
+            dst_pixel[2] = row[src_pixel[0]];
+            dst_pixel[3] = src_pixel[3];
+            
+            dst_pixel += 4;
+            src_pixel += 4;
+        }
+}
+
 void OPImageConvert(
   unsigned char *dstData,
   const unsigned char *srcData, 
@@ -266,6 +307,22 @@ void OPImageConvert(
   {
     NSLog(@"Output format not supported");
   }
+
+    // FIXME: Workaround, for ARGB to RGBA convert, we use custom convert function, this convert speed up upload the layer's backing store to OpenGL ES texture.
+    // This workaround cause color space been ignored.
+    if (srcFormat.compFormat == kOPComponentFormat8bpc &&
+        srcFormat.colorComponents == 3 &&
+        srcFormat.hasAlpha &&
+        !srcFormat.isAlphaLast &&
+        srcFormat.isAlphaPremultiplied &&
+        dstFormat.compFormat == kOPComponentFormat8bpc &&
+        dstFormat.colorComponents == 3 &&
+        dstFormat.hasAlpha &&
+        dstFormat.isAlphaLast &&
+        dstFormat.isAlphaPremultiplied) {
+        convert_bgra_to_rgba(srcData, dstData, width, height);
+        return;
+    }
   
   OPImageFormatLog(srcFormat, @"OPImageConversion source");
   OPImageFormatLog(dstFormat, @"OPImageConversion dest");

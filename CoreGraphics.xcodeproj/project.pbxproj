@@ -758,6 +758,7 @@
 				43BA6C5A185DDDAA00526D8E /* Frameworks */,
 				43BA6C5B185DDDAA00526D8E /* Headers */,
 				43BA6CAD185DDDAA00526D8E /* Resources */,
+				0408722419972E2200348AFC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -817,6 +818,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0408722419972E2200348AFC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "pushd \"$SDK_LIB_PATH\"\nln -sf \"$LD_DYLIB_INSTALL_NAME\" \"lib$PRODUCT_NAME.so\"\npopd\n\npushd \"$SDK_ROOT/usr/include\"\nln -sf \"$INSTALL_PATH/$PUBLIC_HEADERS_FOLDER_PATH\" \"$PRODUCT_NAME\"\npopd\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		43BA6982185DDC4800526D8E /* Sources */ = {

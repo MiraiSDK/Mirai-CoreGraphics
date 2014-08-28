@@ -198,37 +198,38 @@ static bool opal_has_png_header(CGDataProviderRef dp)
       int channels = png_get_channels(png_struct, png_info); // includes alpha
       int depth = png_get_bit_depth(png_struct, png_info);
 
-      if (channels < 4 || depth == 16) {
-          if (depth == 16) {
-              png_set_strip_16(png_struct);
-          }
-
-          if (type == PNG_COLOR_TYPE_PALETTE)
-              png_set_palette_to_rgb(png_struct);
-          
-          if (type == PNG_COLOR_TYPE_GRAY && depth < 8) {
-              png_set_expand_gray_1_2_4_to_8(png_struct);
-          }
-          
-          if (type == PNG_COLOR_TYPE_GRAY ||
-              type == PNG_COLOR_TYPE_GRAY_ALPHA) {
-              png_set_gray_to_rgb(png_struct);
-          }
-          
-          if (png_get_valid(png_struct, png_info, PNG_INFO_tRNS)) {
-              png_set_tRNS_to_alpha(png_struct);
-          }
-          
-          if (! (type & PNG_COLOR_MASK_ALPHA)) {
-              png_set_add_alpha(png_struct, 0xff, PNG_FILLER_AFTER);
-          }
-          
-          png_read_update_info(png_struct, png_info);
-          
-          channels = png_get_channels(png_struct, png_info);
-          type = png_get_color_type(png_struct, png_info);
-          depth = png_get_bit_depth(png_struct, png_info);
+      if (depth == 16) {
+          png_set_strip_16(png_struct);
       }
+      
+      if (type == PNG_COLOR_TYPE_PALETTE)
+          png_set_palette_to_rgb(png_struct);
+      
+      if (type == PNG_COLOR_TYPE_GRAY && depth < 8) {
+          png_set_expand_gray_1_2_4_to_8(png_struct);
+      }
+      
+      if (type == PNG_COLOR_TYPE_GRAY ||
+          type == PNG_COLOR_TYPE_GRAY_ALPHA) {
+          png_set_gray_to_rgb(png_struct);
+      }
+      
+      if (png_get_valid(png_struct, png_info, PNG_INFO_tRNS)) {
+          png_set_tRNS_to_alpha(png_struct);
+      }
+      
+      if (! (type & PNG_COLOR_MASK_ALPHA)) {
+          png_set_add_alpha(png_struct, 0xff, PNG_FILLER_AFTER);
+      }
+      
+      png_set_bgr(png_struct);
+      
+      
+      png_read_update_info(png_struct, png_info);
+      
+      channels = png_get_channels(png_struct, png_info);
+      type = png_get_color_type(png_struct, png_info);
+      depth = png_get_bit_depth(png_struct, png_info);
 
   
     int width = png_get_image_width(png_struct, png_info);
@@ -296,7 +297,7 @@ static bool opal_has_png_header(CGDataProviderRef dp)
       channels * depth,
       bytes_per_row,
       cs,
-      kCGBitmapByteOrderDefault | (alpha ? kCGImageAlphaLast : kCGImageAlphaNone),
+      kCGBitmapByteOrder32Little | (alpha ? kCGImageAlphaPremultipliedFirst : kCGImageAlphaNoneSkipFirst),
       imgDataProvider,
       NULL,
       true,

@@ -424,7 +424,7 @@ static void gs_jpeg_memory_dest_destroy (j_compress_ptr cinfo)
 //    cinfo.out_color_space = JCS_RGB;
       
       //FIXME: Workaround, force decode to RGBA to speed up upload to OpenGL ES
-      cinfo.out_color_space = JCS_EXT_RGBA;
+      cinfo.out_color_space = JCS_EXT_BGRA;
   
     /* decompress */
     jpeg_start_decompress(&cinfo);
@@ -483,7 +483,7 @@ static void gs_jpeg_memory_dest_destroy (j_compress_ptr cinfo)
       cinfo.output_components * BITS_IN_JSAMPLE,
       rowSize,
       cs,
-      kCGBitmapByteOrderDefault | kCGImageAlphaPremultipliedLast,
+      kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst,
       imgDataProvider,
       NULL,
       true,

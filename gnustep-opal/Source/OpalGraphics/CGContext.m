@@ -1353,6 +1353,42 @@ void opal_draw_surface_in_rect(CGContextRef ctxt, CGRect rect, cairo_surface_t *
   cairo_restore(destCairo);
 }
 
+void opal_draw_tiled_surface_with_rect(CGContextRef ctxt, CGRect rect, cairo_surface_t *src, CGRect srcRect)
+{
+    cairo_t *destCairo = ctxt->ct;
+    cairo_save(destCairo);
+    
+    cairo_pattern_t *pattern = cairo_pattern_create_for_surface(src);
+    
+    cairo_matrix_t patternMatrix;
+    cairo_matrix_init_identity(&patternMatrix);
+    
+    // Move to the place where the layer should be drawn
+    cairo_matrix_translate(&patternMatrix, rect.origin.x, rect.origin.y);
+    // Scale the pattern to the correct size
+    cairo_matrix_scale(&patternMatrix,
+                       rect.size.width / srcRect.size.width,
+                       rect.size.height / srcRect.size.height);
+    // Flip the layer up-side-down
+    cairo_matrix_scale(&patternMatrix, 1, -1);
+    cairo_matrix_translate(&patternMatrix, 0, -srcRect.size.height);
+    
+    cairo_matrix_invert(&patternMatrix);
+    
+    cairo_pattern_set_matrix(pattern, &patternMatrix);
+    
+    // FIXME: do we always want this?
+    cairo_pattern_set_extend(pattern, CAIRO_EXTEND_REPEAT);
+    
+    cairo_set_operator(destCairo, CAIRO_OPERATOR_OVER);
+    cairo_set_source(destCairo, pattern);
+    cairo_pattern_destroy(pattern);
+    
+    cairo_paint(destCairo);
+    
+    cairo_restore(destCairo);
+}
+
 void CGContextDrawImage(CGContextRef ctx, CGRect rect, CGImageRef image)
 {
   OPLOGCALL("ctx /*%p*/, CGRectMake(%g, %g, %g, %g), <image>", ctx, rect.origin.x,
@@ -1366,6 +1402,8 @@ void CGContextDrawTiledImage(CGContextRef ctx, CGRect rect, CGImageRef image)
 {
   OPLOGCALL("ctx /*%p*/, CGRectMake(%g, %g, %g, %g), <image>", ctx, rect.origin.x,
             rect.origin.y, rect.size.width, rect.size.height)
+    opal_draw_tiled_surface_with_rect(ctx, rect, opal_CGImageGetSurfaceForImage(image, cairo_get_target(ctx->ct)),
+                              opal_CGImageGetSourceRect(image));
   OPRESTORELOGGING()
 }
 

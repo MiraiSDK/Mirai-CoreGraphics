@@ -1047,7 +1047,13 @@ void OPContextResetClip(CGContextRef ctx)
 
 CGRect CGContextGetClipBoundingBox(CGContextRef ctx)
 {
-  return CGRectNull;
+    double x1,y1,x2,y2;
+    cairo_clip_extents(ctx->ct, &x1, &y1, &x2, &y2);
+    
+    CGRect box = CGRectMake(x1, y1, x2-x1, y2-y1);
+    box = CGRectIntegral(box);
+    
+    return box;
 }
 
 static inline void set_color(cairo_pattern_t **cp, CGColorRef clr, double alpha)

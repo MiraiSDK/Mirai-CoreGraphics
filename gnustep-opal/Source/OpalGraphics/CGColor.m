@@ -270,7 +270,8 @@ CGColorRef CGColorGetConstantColor(CFStringRef name)
 
 size_t CGColorGetNumberOfComponents(CGColorRef clr)
 {
-  return CGColorSpaceGetNumberOfComponents(clr->cspace);
+    // + 1 to include alpha channel
+  return CGColorSpaceGetNumberOfComponents(clr->cspace) + 1;
 }
 
 CGPatternRef CGColorGetPattern(CGColorRef clr)

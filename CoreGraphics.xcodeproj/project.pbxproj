@@ -220,6 +220,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		436060D81AC92DB900303792 /* Android-arm.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Android-arm.xcconfig"; sourceTree = "<group>"; };
+		436060D91AC92DB900303792 /* Android-x86.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Android-x86.xcconfig"; sourceTree = "<group>"; };
 		43BA6987185DDC4800526D8E /* CoreGraphics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreGraphics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BA6992185DDC4800526D8E /* CoreGraphics-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreGraphics-Info.plist"; sourceTree = "<group>"; };
 		43BA6994185DDC4800526D8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -595,6 +597,8 @@
 		43BA6CF1185DE35400526D8E /* xcconfig */ = {
 			isa = PBXGroup;
 			children = (
+				436060D81AC92DB900303792 /* Android-arm.xcconfig */,
+				436060D91AC92DB900303792 /* Android-x86.xcconfig */,
 				43BA6CF2185DE35400526D8E /* Android.xcconfig */,
 			);
 			path = xcconfig;

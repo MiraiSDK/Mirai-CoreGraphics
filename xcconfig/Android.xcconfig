@@ -13,12 +13,12 @@ DEPLOYMENT_LOCATION = YES
 DSTROOT = /
 INSTALL_PATH = $(SDK_ROOT)/System/Library/Frameworks/
 HEADER_SEARCH_PATHS=$(inherited) $(SDK_ROOT)/usr/include/cairo/ $(SDK_ROOT)/usr/include/freetype2/  $(SOURCE_ROOT)/gnustep-opal/Source/OpalGraphics
+LD_DEPENDENCY_INFO_FILE=
 
-ARCHFLAGS=-march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16
-ARCHLDFLAGS=-march=armv7-a -Wl,--fix-cortex-a8
+BASE_CFLAGS=
+BASE_LDFLAGS= -shared -Wl,-z,defs $(SDK_LIB_PATH)/libcairo.a $(SDK_LIB_PATH)/libpixman-1.a -l$(SDK_LIB_PATH)/cpufeatures.a $(SDK_LIB_PATH)/libfontconfig.a $(SDK_LIB_PATH)/libfreetype.a $(SDK_LIB_PATH)/libexpat.a $(SDK_LIB_PATH)/libxml2.a -lobjc $(SDK_LIB_PATH)/libturbojpeg.a $(SDK_LIB_PATH)/libpng.a $(SDK_LIB_PATH)/libtiff.a $(SDK_LIB_PATH)/liblcms.a -lgnustl_shared -lobjc -lm -lz -v
 
-OTHER_CFLAGS= $(inherited) $(ARCHFLAGS)
-OTHER_LDFLAGS= $(inherited) $(ARCHLDFLAGS) -shared -Wl,-z,defs $(SDK_LIB_PATH)/libcairo.a $(SDK_LIB_PATH)/libpixman-1.a -l$(SDK_LIB_PATH)/cpufeatures.a $(SDK_LIB_PATH)/libfontconfig.a $(SDK_LIB_PATH)/libfreetype.a $(SDK_LIB_PATH)/libexpat.a $(SDK_LIB_PATH)/libxml2.a -lobjc $(SDK_LIB_PATH)/libturbojpeg.a $(SDK_LIB_PATH)/libpng.a $(SDK_LIB_PATH)/libtiff.a $(SDK_LIB_PATH)/liblcms.a -lgnustl_shared -lobjc -lm -lz -v
+OTHER_CFLAGS = $(inherited) $(BASE_CFLAGS)
+OTHER_LDFLAGS = $(inherited) $(BASE_LDFLAGS)
 
-LD_DEPENDENCY_INFO_FILE= 
 

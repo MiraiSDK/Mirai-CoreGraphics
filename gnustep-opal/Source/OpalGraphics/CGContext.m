@@ -733,6 +733,16 @@ void CGContextAddEllipseInRect(CGContextRef ctx, CGRect rect)
 {
   OPLOGCALL("ctx /*%p*/, CGRectMake(%g, %g, %g, %g)", ctx, rect.origin.x, rect.origin.y,
             rect.size.width, rect.size.height)
+  cairo_save(ctx->ct);
+  double xc = rect.origin.x + rect.size.width/2;
+  double yc = rect.origin.y + rect.size.height/2;
+  cairo_translate(ctx->ct, xc, yc);
+  if (rect.size.width != rect.size.height) {
+      double sy = (double)(rect.size.height/rect.size.width);
+      cairo_scale(ctx->ct, 1.0, sy);
+  }
+  cairo_arc(ctx->ct, 0.0, 0.0, rect.size.width/2, 0.0, 2.0*M_PI);
+  cairo_restore(ctx->ct);
   OPRESTORELOGGING()
 }
 

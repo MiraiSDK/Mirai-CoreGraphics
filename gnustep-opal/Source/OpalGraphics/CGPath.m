@@ -105,6 +105,14 @@ CGRect CGPathGetPathBoundingBox(CGPathRef path)
         break;
     }
 
+    // initialize with first point
+    if (i==0 && numPoints > 0)
+    {
+      CGPoint p0 = points[0];
+      minX = maxX = p0.x;
+      minY = maxY = p0.y;
+    }
+      
     for (NSUInteger p=0; p<numPoints; p++)
     {
       if (points[p].x < minX)

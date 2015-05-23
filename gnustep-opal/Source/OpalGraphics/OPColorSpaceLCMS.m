@@ -312,13 +312,13 @@ static CGColorSpaceModel CGColorSpaceModelForSignature(icColorSpaceSignature sig
                        renderingIntent: (CGColorRenderingIntent)anIntent
                             pixelCount: (size_t)aPixelCount
 {
-  return [[OPColorTransformLCMS alloc]
+  return [[[OPColorTransformLCMS alloc]
        initWithSourceSpace: self
           destinationSpace: aColorSpace
               sourceFormat: aSourceFormat
          destinationFormat: aDestFormat
            renderingIntent: anIntent
-                pixelCount: aPixelCount];
+                pixelCount: aPixelCount] autorelease];
 }
 
 - (BOOL)isEqual: (id)other

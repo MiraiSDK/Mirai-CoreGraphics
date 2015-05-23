@@ -921,6 +921,11 @@ void CGContextClearRect(CGContextRef ctx, CGRect rect)
   OPRESTORELOGGING()
 }
 
+void CGContextStrokeEllipseInRect(CGContextRef ctx, CGRect rect)
+{
+    
+}
+
 void CGContextStrokeLineSegments(
   CGContextRef ctx,
   const CGPoint points[],

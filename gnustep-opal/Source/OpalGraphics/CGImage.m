@@ -300,6 +300,14 @@ CGImageRef CGImageCreateWithImageInRect(
   return new;
 }
 
+CGImageRef CGImageCreateWithMask (
+                                  CGImageRef image,
+                                  CGImageRef mask
+                                  )
+{
+    return nil;
+}
+
 CGImageRef CGImageCreateWithMaskingColors (
   CGImageRef image,
   const CGFloat components[])

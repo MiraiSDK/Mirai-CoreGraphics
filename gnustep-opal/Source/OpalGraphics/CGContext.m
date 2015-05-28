@@ -324,6 +324,9 @@ void CGContextSaveGState(CGContextRef ctxRef)
   cairo_pattern_reference(ctadd->fill_cp);
   CGColorRetain(ctadd->stroke_color);
   cairo_pattern_reference(ctadd->stroke_cp);
+    CGFontRetain(ctx->add->font);
+    CGColorRetain(ctx->add->shadow_color);
+    cairo_pattern_reference(ctx->add->shadow_cp);
   ctadd->next = ctx->add;
   ctx->add = ctadd;
   OPRESTORELOGGING()
@@ -341,6 +344,10 @@ void CGContextRestoreGState(CGContextRef ctxRef)
   cairo_pattern_destroy(ctx->add->fill_cp);
   CGColorRelease(ctx->add->stroke_color);
   cairo_pattern_destroy(ctx->add->stroke_cp);
+    CGFontRelease(ctx->add->font);
+    CGColorRelease(ctx->add->shadow_color);
+    cairo_pattern_destroy(ctx->add->shadow_cp);
+    
   ctadd = ctx->add->next;
   free(ctx->add);
   ctx->add = ctadd;
@@ -1546,6 +1553,9 @@ void CGContextSetFont(CGContextRef ctx, CGFontRef font)
     return;
   }
   cairo_set_font_face(((CGContext *)ctx)->ct, cairo_scaled_font_get_font_face(((CairoFont*)font)->cairofont));
+    if (((CGContext *)ctx)->add->font) {
+        CGFontRelease(((CGContext *)ctx)->add->font);
+    }
   ((CGContext *)ctx)->add->font = CGFontRetain(font);
   OPRESTORELOGGING()
 }
@@ -1565,9 +1575,11 @@ void CGContextSelectFont(
 {
   OPLOGCALL("ctx /*%p*/, \"%s\", %g, %d", ctx, name, size, textEncoding)
   NSString *n = [[NSString alloc] initWithUTF8String: name];
-  CGContextSetFont(ctx, CGFontCreateWithFontName(n));
+    CGFontRef font = CGFontCreateWithFontName(n);
+  CGContextSetFont(ctx, font);
   CGContextSetFontSize(ctx, size);
   [n release];
+    CGFontRelease(font);
   OPRESTORELOGGING()
 }
 

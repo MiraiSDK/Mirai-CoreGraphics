@@ -68,6 +68,21 @@ static CGColorRef _clearColor;
   [super dealloc];    
 }
 
+- (NSString *)description
+{
+    size_t count = CGColorGetNumberOfComponents(self);
+    NSMutableString *compontsStr = [[[NSMutableString alloc] init] autorelease];
+    for (size_t idx = 0; idx < count; idx ++) {
+        CGFloat c = comps[idx];
+        if (idx > 0) {
+            [compontsStr appendFormat:@" ,"];
+        }
+        [compontsStr appendFormat:@"%.2f",c];
+    }
+    
+    return [NSString stringWithFormat:@"<%@: %p componts:[%@]>",self.class,self,compontsStr];
+}
+
 - (BOOL) isEqual: (id)other
 {
   if (![other isKindOfClass: [CGColor class]]) return NO;

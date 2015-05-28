@@ -167,7 +167,7 @@ bool CGFontCanCreatePostScriptSubset(
 
 CFStringRef CGFontCopyFullName(CGFontRef font)
 {
-  return font->fullName;
+  return ((CGFont *)font)->fullName;
 }
 
 CFStringRef CGFontCopyGlyphNameForGlyph(CGFontRef font, CGGlyph glyph)
@@ -177,7 +177,7 @@ CFStringRef CGFontCopyGlyphNameForGlyph(CGFontRef font, CGGlyph glyph)
 
 CFStringRef CGFontCopyPostScriptName(CGFontRef font)
 {
-  return font->postScriptName;
+  return ((CGFont *)font)->postScriptName;
 }
 
 CFDataRef CGFontCopyTableForTag(CGFontRef font, uint32_t tag)
@@ -242,22 +242,22 @@ CGFontRef CGFontCreateWithPlatformFont(void *platformFontReference)
 
 int CGFontGetAscent(CGFontRef font)
 {
-  return font->ascent;
+  return ((CGFont *)font)->ascent;
 }
 
 int CGFontGetCapHeight(CGFontRef font)
 {
-  return font->capHeight;
+  return ((CGFont *)font)->capHeight;
 }
 
 int CGFontGetDescent(CGFontRef font)
 {
-  return font->descent;
+  return ((CGFont *)font)->descent;
 }
 
 CGRect CGFontGetFontBBox(CGFontRef font)
 {
-  return font->fontBBox;
+  return ((CGFont *)font)->fontBBox;
 }
 
 bool CGFontGetGlyphAdvances(
@@ -285,22 +285,22 @@ CGGlyph CGFontGetGlyphWithGlyphName(CGFontRef font, CFStringRef glyphName)
 
 CGFloat CGFontGetItalicAngle(CGFontRef font)
 {
-  return font->italicAngle;
+  return ((CGFont *)font)->italicAngle;
 }
 
 int CGFontGetLeading(CGFontRef font)
 {
-  return font->leading;
+  return ((CGFont *)font)->leading;
 }
 
 size_t CGFontGetNumberOfGlyphs(CGFontRef font)
 {
-  return font->numberOfGlyphs;
+  return ((CGFont *)font)->numberOfGlyphs;
 }
 
 CGFloat CGFontGetStemV(CGFontRef font)
 {
-  return font->stemV;
+  return ((CGFont *)font)->stemV;
 }
 
 CFTypeID CGFontGetTypeID()
@@ -311,12 +311,12 @@ CFTypeID CGFontGetTypeID()
 
 int CGFontGetUnitsPerEm(CGFontRef font)
 {
-  return font->unitsPerEm;
+  return ((CGFont *)font)->unitsPerEm;
 }
 
 int CGFontGetXHeight(CGFontRef font)
 {
-  return font->xHeight;
+  return ((CGFont *)font)->xHeight;
 }
 
 CGFontRef CGFontRetain(CGFontRef font)

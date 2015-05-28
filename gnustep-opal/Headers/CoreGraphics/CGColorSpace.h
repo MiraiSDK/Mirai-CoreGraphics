@@ -29,7 +29,7 @@
 
 /* Data Types */
 
-#ifdef __OBJC__
+#ifdef __IMPLICIT_BRIDGE__
 @protocol CGColorSpace;
 typedef id <CGColorSpace, NSObject>CGColorSpaceRef;
 #else

@@ -76,19 +76,19 @@
 
 CGColorSpaceRef OPGradientGetColorSpace(CGGradientRef g)
 {
-  return g->cs;
+  return ((CGGradient *)g)->cs;
 }
 const CGFloat *OPGradientGetComponents(CGGradientRef g)
 {
-  return g->components;
+  return ((CGGradient *)g)->components;
 }
 const CGFloat *OPGradientGetLocations(CGGradientRef g)
 {
-  return g->locations; 
+  return ((CGGradient *)g)->locations;
 }
 size_t OPGradientGetCount(CGGradientRef g)
 {
-  return g->count;
+    return ((CGGradient *)g)->count;
 }
 
 

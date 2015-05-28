@@ -66,7 +66,7 @@ typedef struct CGPSConverterCallbacks {
 } CGPSConverterCallbacks;
 
 
-#ifdef __OBJC__
+#ifdef __IMPLICIT_BRIDGE__
 @class CGPSConverter;
 typedef CGPSConverter* CGPSConverterRef;
 #else

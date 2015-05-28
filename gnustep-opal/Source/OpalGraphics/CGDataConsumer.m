@@ -63,8 +63,8 @@ size_t OPDataConsumerPutBytes(CGDataConsumerRef dc, const void *buffer, size_t c
 {
   if (NULL != dc)
   {
-    return dc->cb.putBytes(
-      dc->info, 
+    return ((CGDataConsumer *)dc)->cb.putBytes(
+      ((CGDataConsumer *)dc)->info,
       buffer,
       count);
   }

@@ -209,6 +209,10 @@ isCairoDrawingIntoUserBuffer: (BOOL)isIntoUserBuffer
   return userBuffer;
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<%@: %p> size:{%.2f %.2f}",self.class,self,self->device_size.width,self->device_size.height];
+}
 @end
 
 
@@ -379,8 +383,9 @@ void *CGBitmapContextGetData(CGContextRef ctx)
   return 0;
 }
 
-size_t CGBitmapContextGetHeight(CGContextRef ctx)
+size_t CGBitmapContextGetHeight(CGContextRef ctxRef)
 {
+    CGContext *ctx = (CGContext *)ctxRef;
   if ([ctx isKindOfClass: [CGBitmapContext class]])
   {
     return cairo_image_surface_get_height(cairo_get_target(ctx->ct));
@@ -388,8 +393,9 @@ size_t CGBitmapContextGetHeight(CGContextRef ctx)
   return 0;
 }
 
-size_t CGBitmapContextGetWidth(CGContextRef ctx)
+size_t CGBitmapContextGetWidth(CGContextRef ctxRef)
 {
+    CGContext *ctx = (CGContext *)ctxRef;
   if ([ctx isKindOfClass: [CGBitmapContext class]])
   {
     return cairo_image_surface_get_width(cairo_get_target(ctx->ct));

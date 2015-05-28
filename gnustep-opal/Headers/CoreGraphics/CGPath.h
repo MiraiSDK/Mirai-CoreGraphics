@@ -40,14 +40,14 @@ typedef enum CGPathElementType {
 
 /* Data Types */
 
-#ifdef __OBJC__
+#ifdef __IMPLICIT_BRIDGE__
 @class CGPath;
 typedef CGPath* CGPathRef;
 #else
 typedef struct CGPath* CGPathRef;
 #endif
 
-#ifdef __OBJC__
+#ifdef __IMPLICIT_BRIDGE__
 @class CGMutablePath;
 typedef CGMutablePath* CGMutablePathRef;
 #else

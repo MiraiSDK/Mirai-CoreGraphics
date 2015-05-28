@@ -158,18 +158,19 @@ void CGColorRelease(CGColorRef clr)
 
 CGColorRef CGColorCreateCopy(CGColorRef clr)
 {
-  return CGColorCreate(clr->cspace, clr->comps);
+  return CGColorCreate(((CGColor *)clr)->cspace, ((CGColor *)clr)->comps);
 }
 
-CGColorRef CGColorCreateCopyWithAlpha(CGColorRef clr, CGFloat alpha)
+CGColorRef CGColorCreateCopyWithAlpha(CGColorRef clrRef, CGFloat alpha)
 {
-  CGColorRef newclr;
+  CGColor *newclr;
+    CGColor *clr = (CGColor *)clrRef;
 
-  newclr = CGColorCreate(clr->cspace, clr->comps);
+  newclr = (CGColor *)CGColorCreate(clr->cspace, clr->comps);
   if (!newclr) return nil;
 
   newclr->comps[CGColorSpaceGetNumberOfComponents(newclr->cspace)] = alpha;
-  return newclr;
+  return (CGColorRef)newclr;
 }
 
 CGColorRef CGColorCreateGenericCMYK(
@@ -214,7 +215,7 @@ CGColorRef CGColorCreateWithPattern(
   const CGFloat components[])
 {
   CGColorRef clr = CGColorCreate(colorspace, components);
-  clr->pattern = CGPatternRetain(pattern);
+  ((CGColor *)clr)->pattern = CGPatternRetain(pattern);
   return clr;
 }
 
@@ -225,18 +226,18 @@ bool CGColorEqualToColor(CGColorRef color1, CGColorRef color2)
 
 CGFloat CGColorGetAlpha(CGColorRef clr)
 {
-  int alphaIndex = CGColorSpaceGetNumberOfComponents(clr->cspace);
-  return clr->comps[alphaIndex];
+  int alphaIndex = CGColorSpaceGetNumberOfComponents(((CGColor *)clr)->cspace);
+  return ((CGColor *)clr)->comps[alphaIndex];
 }
 
 CGColorSpaceRef CGColorGetColorSpace(CGColorRef clr)
 {
-  return clr->cspace;
+  return ((CGColor *)clr)->cspace;
 }
 
 const CGFloat *CGColorGetComponents(CGColorRef clr)
 {
-  return clr->comps;
+  return ((CGColor *)clr)->comps;
 }
 
 CGColorRef CGColorGetConstantColor(CFStringRef name)
@@ -271,12 +272,12 @@ CGColorRef CGColorGetConstantColor(CFStringRef name)
 size_t CGColorGetNumberOfComponents(CGColorRef clr)
 {
     // + 1 to include alpha channel
-  return CGColorSpaceGetNumberOfComponents(clr->cspace) + 1;
+  return CGColorSpaceGetNumberOfComponents(((CGColor *)clr)->cspace) + 1;
 }
 
 CGPatternRef CGColorGetPattern(CGColorRef clr)
 {
-  return clr->pattern;
+  return ((CGColor *)clr)->pattern;
 }
 
 CGColorRef OPColorGetTransformedToSpace(CGColorRef clr, CGColorSpaceRef space, CGColorRenderingIntent intent)

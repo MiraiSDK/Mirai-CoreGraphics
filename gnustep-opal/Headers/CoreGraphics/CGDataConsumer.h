@@ -27,7 +27,7 @@
 
 /* Data Types */
 
-#ifdef __OBJC__
+#ifdef __IMPLICIT_BRIDGE__
 @class CGDataConsumer;
 typedef CGDataConsumer* CGDataConsumerRef;
 #else

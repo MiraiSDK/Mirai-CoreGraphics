@@ -48,9 +48,9 @@ void OPSVGContextBeginPage(CGContextRef ctx, CFDictionaryRef pageInfo)
 void OPSVGContextClose(CGContextRef ctx)
 {
   cairo_status_t cret;
-  cairo_surface_finish(cairo_get_target(ctx->ct));
+  cairo_surface_finish(cairo_get_target(((CGContext *)ctx)->ct));
   
-  cret = cairo_status(ctx->ct);
+  cret = cairo_status(((CGContext *)ctx)->ct);
   if (cret) {
     NSLog(@"OPSVGContextClose status: %s",
            cairo_status_to_string(cret));
@@ -130,9 +130,9 @@ CGContextRef OPSVGContextCreateWithURL(
 void OPSVGContextEndPage(CGContextRef ctx)
 {
   cairo_status_t cret;
-  cairo_show_page(ctx->ct);
+  cairo_show_page(((CGContext *)ctx)->ct);
   
-  cret = cairo_status(ctx->ct);
+  cret = cairo_status(((CGContext *)ctx)->ct);
   if (cret) {
     NSLog(@"OPSVGContextEndPage status: %s",
           cairo_status_to_string(cret));

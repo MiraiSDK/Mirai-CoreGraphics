@@ -66,14 +66,14 @@ typedef unsigned long CFTypeID;
 typedef NSRange CFRange;
 typedef NSComparisonResult CFComparisonResult;
 
-#ifdef __OBJC__
+#ifdef __IMPLICIT_BRIDGE__
 @class NSObject;
 typedef NSObject *CFTypeRef;
 #else
 typedef struct NSObject * CFTypeRef;
 #endif
 
-#ifdef __OBJC__
+#ifdef __IMPLICIT_BRIDGE__
 @class NSString;
 @class NSMutableString;
 typedef NSString* CFStringRef;
@@ -83,7 +83,7 @@ typedef const struct __CFString * CFStringRef;
 typedef struct __CFString * CFMutableStringRef;
 #endif
 
-#ifdef __OBJC__
+#ifdef __IMPLICIT_BRIDGE__
 @class NSAttributedString;
 @class NSMutableAttributedString;
 typedef NSAttributedString* CFAttributedStringRef;
@@ -93,7 +93,7 @@ typedef struct CFAttributedString * CFAttributedStringRef;
 typedef struct CFMutableAttributedString * CFMutableAttributedStringRef;
 #endif
 
-#ifdef __OBJC__
+#ifdef __IMPLICIT_BRIDGE__
 @class NSArray;
 @class NSMutableArray;
 typedef NSArray* CFArrayRef;
@@ -103,14 +103,14 @@ typedef struct CFArray *CFArrayRef;
 typedef struct CFArray *CFMutableArrayRef;
 #endif
 
-#ifdef __OBJC__
+#ifdef __IMPLICIT_BRIDGE__
 @class NSCharacterSet;
 typedef NSCharacterSet* CFCharacterSetRef;
 #else
 typedef struct CFCharacterSet * CFCharacterSetRef;
 #endif
 
-#ifdef __OBJC__
+#ifdef __IMPLICIT_BRIDGE__
 @class NSData;
 @class NSMutableData;
 typedef NSData* CFDataRef;
@@ -120,7 +120,7 @@ typedef struct CFData *CFDataRef;
 typedef struct CFMutableData *CFMutableDataRef;
 #endif
 
-#ifdef __OBJC__
+#ifdef __IMPLICIT_BRIDGE__
 @class NSDate;
 @class NSTimeZone;
 typedef NSDate* CFDateRef;
@@ -130,7 +130,7 @@ typedef struct CFDate *CFDateRef;
 typedef struct CFTimeZone *CFTimeZoneRef;
 #endif
 
-#ifdef __OBJC__
+#ifdef __IMPLICIT_BRIDGE__
 @class NSDictionary;
 @class NSMutableDictionary;
 typedef NSDictionary* CFDictionaryRef;
@@ -140,21 +140,21 @@ typedef struct CFDictionary * CFDictionaryRef;
 typedef struct CFMutableDictionary * CFMutableDictionaryRef;
 #endif
 
-#ifdef __OBJC__
+#ifdef __IMPLICIT_BRIDGE__
 @class NSError;
 typedef NSError* CFErrorRef;
 #else
 typedef struct CFError *CFErrorRef;
 #endif
 
-#ifdef __OBJC__
+#ifdef __IMPLICIT_BRIDGE__
 @class NSNumber;
 typedef NSNumber* CFNumberRef;
 #else
 typedef struct NSNumber * CFNumberRef;
 #endif
 
-#ifdef __OBJC__
+#ifdef __IMPLICIT_BRIDGE__
 @class NSSet;
 @class NSMutableSet;
 typedef NSSet* CFSetRef;
@@ -164,7 +164,7 @@ typedef struct CFSet * CFSetRef;
 typedef struct CFMutableSet * CFMutableSetRef;
 #endif
 
-#ifdef __OBJC__
+#ifdef __IMPLICIT_BRIDGE__
 @class NSURL;
 typedef NSURL *CFURLRef;
 #else

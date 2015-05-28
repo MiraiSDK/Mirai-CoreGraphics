@@ -347,6 +347,7 @@ size_t OPDataProviderGetBytesAtPositionCallback(
 /* Data callbacks */
 
 typedef struct DataInfo {
+    void *info;
   size_t size;
   const void *data;
   CGDataProviderReleaseDataCallback releaseData;
@@ -375,6 +376,10 @@ static size_t opal_DataGetBytesAtPosition(
 
 static void opal_DataReleaseInfo(void *info)
 {
+    DataInfo *dataInfo = info;
+    if (dataInfo->releaseData) {
+        dataInfo->releaseData(dataInfo->info, dataInfo->data,dataInfo->size);
+    }
   free((DataInfo*)info);
 }
 
@@ -540,6 +545,7 @@ CGDataProviderRef CGDataProviderCreateWithData(
   void (*releaseData)(void *info, const void *data, size_t size))
 {
   DataInfo *i = malloc(sizeof(DataInfo));
+    i->info = info;
   i->size = size;
   i->data = data;
   i->releaseData = releaseData;

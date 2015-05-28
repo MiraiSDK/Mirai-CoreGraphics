@@ -49,9 +49,9 @@ void OPPostScriptContextBeginPage(CGContextRef ctx, CFDictionaryRef pageInfo)
 void OPPostScriptContextClose(CGContextRef ctx)
 {
   cairo_status_t cret;
-  cairo_surface_finish(cairo_get_target(ctx->ct));
+  cairo_surface_finish(cairo_get_target(((CGContext *)ctx)->ct));
   
-  cret = cairo_status(ctx->ct);
+  cret = cairo_status(((CGContext *)ctx)->ct);
   if (cret) {
     NSLog(@"OPPostScriptContextClose status: %s",
           cairo_status_to_string(cret));
@@ -134,12 +134,12 @@ CGContextRef OPPostScriptContextCreateWithURL(
 void OPPostScriptContextEndPage(CGContextRef ctx)
 {
   // Make sure it is not an EPS surface, which are single-page
-  if (!cairo_ps_surface_get_eps(cairo_get_target(ctx->ct)))
+  if (!cairo_ps_surface_get_eps(cairo_get_target(((CGContext *)ctx)->ct)))
   {
     cairo_status_t cret;
-    cairo_show_page(ctx->ct);
+    cairo_show_page(((CGContext *)ctx)->ct);
   
-    cret = cairo_status(ctx->ct);
+    cret = cairo_status(((CGContext *)ctx)->ct);
     if (cret) {
       NSLog(@"OPPostScriptContextEndPage status: %s",
              cairo_status_to_string(cret));

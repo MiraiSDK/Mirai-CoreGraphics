@@ -196,7 +196,7 @@ void CGImageDestinationAddImageFromSource(
 
 bool CGImageDestinationFinalize(CGImageDestinationRef dest)
 {
-  return [dest finalize];
+  return [(CGImageDestination *)dest finalize];
 }
 
 CFTypeID CGImageDestinationGetTypeID()

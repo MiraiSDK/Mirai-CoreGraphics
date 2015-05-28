@@ -76,8 +76,9 @@ void CGPDFContextBeginPage(CGContextRef ctx, CFDictionaryRef pageInfo)
   // FIXME: Not sure what this should do. Nothing?
 }
 
-void CGPDFContextClose(CGContextRef ctx)
+void CGPDFContextClose(CGContextRef ctxRef)
 {
+    CGContext *ctx = (CGContext *)ctxRef;
   cairo_status_t cret;
   cairo_surface_finish(cairo_get_target(ctx->ct));
   
@@ -141,8 +142,9 @@ CGContextRef CGPDFContextCreateWithURL(
   return ctx;
 }
 
-void CGPDFContextEndPage(CGContextRef ctx)
+void CGPDFContextEndPage(CGContextRef ctxRef)
 {
+    CGContext *ctx = (CGContext *)ctxRef;
   cairo_status_t cret;
   cairo_show_page(ctx->ct);
   

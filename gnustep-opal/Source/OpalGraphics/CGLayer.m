@@ -57,10 +57,10 @@ CGLayerRef CGLayerCreateWithContext(
   // size is in user-space units of referenceCtxt, so transform it to device
   // space.
   double w = size.width, h = size.height;
-  cairo_user_to_device_distance(referenceCtxt->ct, &w, &h);
+  cairo_user_to_device_distance(((CGContext *)referenceCtxt)->ct, &w, &h);
   
   cairo_surface_t *layerSurface = 
-    cairo_surface_create_similar(cairo_get_target(referenceCtxt->ct),
+    cairo_surface_create_similar(cairo_get_target(((CGContext *)referenceCtxt)->ct),
                                  CAIRO_CONTENT_COLOR_ALPHA,
                                  ceil(fabs(w)),
                                  ceil(fabs(h)));
@@ -87,12 +87,12 @@ void CGLayerRelease(CGLayerRef layer)
 
 CGSize CGLayerGetSize(CGLayerRef layer)
 {
-  return layer->size;
+  return ((CGLayer *)layer)->size;
 }
 
 CGContextRef CGLayerGetContext(CGLayerRef layer)
 {
-  return layer->ctxt;
+  return ((CGLayer *)layer)->ctxt;
 }
 
 void CGContextDrawLayerInRect(
@@ -100,8 +100,9 @@ void CGContextDrawLayerInRect(
   CGRect rect,
   CGLayerRef layer)
 {
-  opal_draw_surface_in_rect(destCtxt, rect, cairo_get_target(layer->ctxt->ct),
-    CGRectMake(0, 0, layer->size.width, layer->size.height));
+    CGContext *ctx = ((CGLayer *)layer)->ctxt;
+  opal_draw_surface_in_rect(destCtxt, rect, cairo_get_target(ctx->ct),
+    CGRectMake(0, 0, ((CGLayer *)layer)->size.width, ((CGLayer *)layer)->size.height));
 }
 
 void CGContextDrawLayerAtPoint(
@@ -110,7 +111,7 @@ void CGContextDrawLayerAtPoint(
   CGLayerRef layer)
 {
   CGContextDrawLayerInRect(destCtxt,
-    CGRectMake(point.x, point.y, layer->size.width, layer->size.height),
+    CGRectMake(point.x, point.y, ((CGLayer *)layer)->size.width, ((CGLayer *)layer)->size.height),
     layer);
 }
 

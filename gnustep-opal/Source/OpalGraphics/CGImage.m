@@ -219,7 +219,7 @@ CGImageRef CGImageMaskCreate(
   size_t bitsPerComponent, size_t bitsPerPixel, size_t bytesPerRow,
   CGDataProviderRef provider, const CGFloat decode[], bool shouldInterpolate)
 {
-  CGImageRef img = [[CGImage alloc] initWithWidth: width
+  CGImage *img = [[CGImage alloc] initWithWidth: width
                                            height: height
                                  bitsPerComponent: bitsPerComponent
                                      bitsPerPixel: bitsPerPixel
@@ -238,7 +238,7 @@ CGImageRef CGImageMaskCreate(
 
   img->ismask = true;
 
-  return img;
+  return (CGImageRef)img;
 }
 
 CGImageRef CGImageCreateCopy(CGImageRef image)
@@ -248,11 +248,11 @@ CGImageRef CGImageCreateCopy(CGImageRef image)
 
 
 CGImageRef CGImageCreateCopyWithColorSpace(
-  CGImageRef image,
+  CGImageRef imageRef,
   CGColorSpaceRef colorspace)
 {
-  CGImageRef new;
-
+  CGImage *new;
+  CGImage *image = (CGImage *)imageRef;
   // FIXME: is this supposed to convert pixel data?
 
   if (image->ismask ||
@@ -263,7 +263,7 @@ CGImageRef CGImageCreateCopyWithColorSpace(
   }
   else
   {
-    new = CGImageCreate(image->width, image->height,
+    new = (CGImage *)CGImageCreate(image->width, image->height,
       image->bitsPerComponent, image->bitsPerPixel, image->bytesPerRow,
       colorspace, image->bitmapInfo, image->dp, image->decode,
       image->shouldInterpolate, image->intent);
@@ -276,14 +276,15 @@ CGImageRef CGImageCreateCopyWithColorSpace(
   {
     new->surf = cairo_surface_reference(image->surf);
   }
-  return new;
+  return (CGImageRef)new;
 }
 
 CGImageRef CGImageCreateWithImageInRect(
-  CGImageRef image,
+  CGImageRef imageRef,
   CGRect rect)
 {
-  CGImageRef new = CGImageCreate(image->width, image->height,
+  CGImage *image = (CGImage *)imageRef;
+  CGImage *new = (CGImage *)CGImageCreate(image->width, image->height,
       image->bitsPerComponent, image->bitsPerPixel, image->bytesPerRow,
       image->cspace, image->bitmapInfo, image->dp, image->decode,
       image->shouldInterpolate, image->intent);
@@ -297,7 +298,7 @@ CGImageRef CGImageCreateWithImageInRect(
   // TODO: Implement data provider to crop the data from the source image
   // TODO: Share underlying cairo surface!
 
-  return new;
+  return (CGImageRef)new;
 }
 
 CGImageRef CGImageCreateWithMask (
@@ -328,7 +329,7 @@ static CGImageRef createWithDataProvider(
     nil];
 
   CGImageSourceRef src = CGImageSourceCreateWithDataProvider(provider, opts);
-  CGImageRef img = nil;
+  CGImage *img = nil;
   if ([CGImageSourceGetType(src) isEqual: type])
   {
     if (CGImageSourceGetCount(src) >= 1)
@@ -397,67 +398,67 @@ void CGImageRelease(CGImageRef image)
 
 bool CGImageIsMask(CGImageRef image)
 {
-  return image->ismask;
+  return ((CGImage *)image)->ismask;
 }
 
 size_t CGImageGetWidth(CGImageRef image)
 {
-  return image->width;
+  return ((CGImage *)image)->width;
 }
 
 size_t CGImageGetHeight(CGImageRef image)
 {
-  return image->height;
+  return ((CGImage *)image)->height;
 }
 
 size_t CGImageGetBitsPerComponent(CGImageRef image)
 {
-  return image->bitsPerComponent;
+  return ((CGImage *)image)->bitsPerComponent;
 }
 
 size_t CGImageGetBitsPerPixel(CGImageRef image)
 {
-  return image->bitsPerPixel;
+  return ((CGImage *)image)->bitsPerPixel;
 }
 
 size_t CGImageGetBytesPerRow(CGImageRef image)
 {
-  return image->bytesPerRow;
+  return ((CGImage *)image)->bytesPerRow;
 }
 
 CGColorSpaceRef CGImageGetColorSpace(CGImageRef image)
 {
-  return image->cspace;
+  return ((CGImage *)image)->cspace;
 }
 
 CGImageAlphaInfo CGImageGetAlphaInfo(CGImageRef image)
 {
-  return image->bitmapInfo & kCGBitmapAlphaInfoMask;
+  return ((CGImage *)image)->bitmapInfo & kCGBitmapAlphaInfoMask;
 }
 
 CGBitmapInfo CGImageGetBitmapInfo(CGImageRef image)
 {
-  return image->bitmapInfo;
+  return ((CGImage *)image)->bitmapInfo;
 }
 
 CGDataProviderRef CGImageGetDataProvider(CGImageRef image)
 {
-  return image->dp;
+  return ((CGImage *)image)->dp;
 }
 
 const CGFloat *CGImageGetDecode(CGImageRef image)
 {
-  return image->decode;
+  return ((CGImage *)image)->decode;
 }
 
 bool CGImageGetShouldInterpolate(CGImageRef image)
 {
-  return image->shouldInterpolate;
+  return ((CGImage *)image)->shouldInterpolate;
 }
 
 CGColorRenderingIntent CGImageGetRenderingIntent(CGImageRef image)
 {
-  return image->intent;
+  return ((CGImage *)image)->intent;
 }
 
 /**
@@ -468,8 +469,10 @@ CGColorRenderingIntent CGImageGetRenderingIntent(CGImageRef image)
  *
  *
  */
-cairo_surface_t *opal_CGImageGetSurfaceForImage(CGImageRef img, cairo_surface_t *contextSurface)
+cairo_surface_t *opal_CGImageGetSurfaceForImage(CGImageRef imgRef, cairo_surface_t *contextSurface)
 {
+    CGImage *img = (CGImage *)imgRef;
+
   if (NULL == img)
   {
     return NULL;
@@ -547,8 +550,10 @@ cairo_surface_t *opal_CGImageGetSurfaceForImage(CGImageRef img, cairo_surface_t 
   return img->surf;
 }
 
-CGRect opal_CGImageGetSourceRect(CGImageRef image)
+CGRect opal_CGImageGetSourceRect(CGImageRef imageRef)
 {
+    CGImage *image = (CGImage *)imageRef;
+
   if (NULL == image) {
     return CGRectMake(0, 0, 0, 0);
   }

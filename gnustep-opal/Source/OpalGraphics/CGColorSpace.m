@@ -82,12 +82,12 @@ Class OPColorSpaceClass()
 
 CFDataRef CGColorSpaceCopyICCProfile(CGColorSpaceRef cs)
 {
-  return [cs ICCProfile];
+  return [[cs ICCProfile] copy];
 }
 
 CFStringRef CGColorSpaceCopyName(CGColorSpaceRef cs)
 {
-  return [cs name];
+  return [[cs name] copy];
 }
 
 CGColorSpaceRef CGColorSpaceCreateCalibratedGray(

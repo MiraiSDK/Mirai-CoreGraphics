@@ -249,10 +249,12 @@ static NSUInteger OPNumberOfPointsForElementType(CGPathElementType type)
   _count++;
 }
 
-- (id) initWithCGPath: (CGPathRef)path
+- (id) initWithCGPath: (CGPathRef)pathRef
 {
   self = [super init];
 
+    CGPath *path = (CGPath *)pathRef;
+    
   if ([path isKindOfClass: [CGPath class]])
   {
     _count = path->_count;

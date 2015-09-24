@@ -479,6 +479,33 @@ cairo_surface_t *opal_CGImageGetSurfaceForImage(CGImageRef imgRef, cairo_surface
   }
   if (NULL == img->surf)
   {
+      const unsigned char *srcData = OPDataProviderGetBytePointer(img->dp);
+      const CGBitmapInfo srcBitmapInfo = CGImageGetBitmapInfo(img);
+      const size_t srcWidth = CGImageGetWidth(img);
+      const size_t srcHeight = CGImageGetHeight(img);
+      const size_t srcBytesPerRow = CGImageGetBytesPerRow(img);
+
+      CGBitmapInfo dstBitmapInfo = kCGImageAlphaPremultipliedFirst;
+      if (NSHostByteOrder() == NS_LittleEndian)
+      {
+          dstBitmapInfo |= kCGBitmapByteOrder32Little;
+      }
+      else if (NSHostByteOrder() == NS_BigEndian)
+      {
+          dstBitmapInfo |= kCGBitmapByteOrder32Big;
+      }
+
+      // avoid convert data while bitmapinfo is same
+      if (srcBitmapInfo == dstBitmapInfo) {
+          
+          img->surf = cairo_image_surface_create_for_data(srcData,
+                                              CAIRO_FORMAT_ARGB32,
+                                              srcWidth,
+                                              srcHeight,
+                                              srcBytesPerRow);
+          return img->surf;
+      }
+      
     cairo_surface_t *memSurf = cairo_image_surface_create(CAIRO_FORMAT_ARGB32,
                                            CGImageGetWidth(img),
                                            CGImageGetHeight(img));
@@ -490,13 +517,8 @@ cairo_surface_t *opal_CGImageGetSurfaceForImage(CGImageRef imgRef, cairo_surface
 
     cairo_surface_flush(memSurf); // going to modify the surface outside of cairo
 
-    const unsigned char *srcData = OPDataProviderGetBytePointer(img->dp);
-    const size_t srcWidth = CGImageGetWidth(img);
-    const size_t srcHeight = CGImageGetHeight(img);
     const size_t srcBitsPerComponent = CGImageGetBitsPerComponent(img);
     const size_t srcBitsPerPixel = CGImageGetBitsPerPixel(img);
-    const size_t srcBytesPerRow = CGImageGetBytesPerRow(img);
-    const CGBitmapInfo srcBitmapInfo = CGImageGetBitmapInfo(img);
     const CGColorSpaceRef srcColorSpace = CGImageGetColorSpace(img);
     const CGColorRenderingIntent srcIntent = CGImageGetRenderingIntent(img);
 
@@ -505,15 +527,6 @@ cairo_surface_t *opal_CGImageGetSurfaceForImage(CGImageRef imgRef, cairo_surface
     const size_t dstBitsPerPixel = 32;
     const size_t dstBytesPerRow = cairo_image_surface_get_stride(memSurf);
     
-    CGBitmapInfo dstBitmapInfo = kCGImageAlphaPremultipliedFirst;
-    if (NSHostByteOrder() == NS_LittleEndian)
-	  {
-    	dstBitmapInfo |= kCGBitmapByteOrder32Little;
-    }
-    else if (NSHostByteOrder() == NS_BigEndian)
-		{
-			dstBitmapInfo |= kCGBitmapByteOrder32Big;
-		}
     const CGColorSpaceRef dstColorSpace = srcColorSpace;
 
     OPImageConvert(
@@ -529,6 +542,8 @@ cairo_surface_t *opal_CGImageGetSurfaceForImage(CGImageRef imgRef, cairo_surface
 		DumpPixel(srcData, @"OPImageConvert src (expecting R G B A)");
 		DumpPixel(dstData, @"OPImageConvert dst (expecting A R G B premult)");
 		
+      //FIXME: bug? is release srcData ok?
+      // what if we call CGDataProviderCopyData() after this?
     OPDataProviderReleaseBytePointer(img->dp, srcData);
 
     cairo_surface_mark_dirty(memSurf); // done modifying the surface outside of cairo

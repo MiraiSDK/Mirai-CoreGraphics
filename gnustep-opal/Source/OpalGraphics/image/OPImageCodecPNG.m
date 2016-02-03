@@ -218,8 +218,10 @@ static bool opal_has_png_header(CGDataProviderRef dp)
           png_set_tRNS_to_alpha(png_struct);
       }
       
+      BOOL originHasAlpha = YES;
       if (! (type & PNG_COLOR_MASK_ALPHA)) {
           png_set_add_alpha(png_struct, 0xff, PNG_FILLER_AFTER);
+          originHasAlpha = NO;
       }
       
       png_set_bgr(png_struct);
@@ -286,7 +288,24 @@ static bool opal_has_png_header(CGDataProviderRef dp)
         row_pointers[i] = buf + (i * bytes_per_row);
       }
       png_read_image(png_struct, row_pointers);
-    }    
+    }
+      
+      //do pre-multiplied if origin file has alpha channel
+      if (originHasAlpha) {
+          uint8_t *imgBytes = [imgData mutableBytes];
+          for (int y = 0; y < height; y++) {
+              uint8_t *row_start = imgBytes + (y * bytes_per_row);
+              for (int x = 0; x< width; x++) {
+                  uint8_t *pixel = row_start + (x * 4);
+                  float alpha = pixel[3]/255.0;
+                  pixel[0] = pixel[0] * alpha;
+                  pixel[1] = pixel[1] * alpha;
+                  pixel[2] = pixel[2] * alpha;
+              }
+          }
+      }
+      
+      
     CGDataProviderRef imgDataProvider = CGDataProviderCreateWithCFData((CFDataRef)imgData);
     [imgData release];
     

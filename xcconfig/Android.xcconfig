@@ -9,6 +9,8 @@
 SDK_ROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/Android18.sdk
 SDK_LIB_PATH=$(SDK_ROOT)/usr/lib
 
+DEBUG_INFORMATION_FORMAT = dwarf
+
 DEPLOYMENT_LOCATION = YES
 DSTROOT = /
 INSTALL_PATH = $(SDK_ROOT)/System/Library/Frameworks/

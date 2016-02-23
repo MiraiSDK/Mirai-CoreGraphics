@@ -250,6 +250,37 @@ static void checkSurf(cairo_surface_t *surf)
   }
 }
 
+static size_t calcuateBytesPerRow(
+                           size_t width,
+                           size_t bitsPerComponent,
+                           CGColorSpaceRef cs,
+                           CGBitmapInfo info)
+{
+    size_t numComps = CGColorSpaceGetNumberOfComponents(cs);
+    const CGImageAlphaInfo alpha = info &  kCGBitmapAlphaInfoMask;
+    switch (alpha) {
+        case kCGImageAlphaPremultipliedLast:
+        case kCGImageAlphaPremultipliedFirst:
+        case kCGImageAlphaLast:
+        case kCGImageAlphaFirst:
+        case kCGImageAlphaNoneSkipLast:
+        case kCGImageAlphaNoneSkipFirst:
+            numComps += 1; //has alpha channel
+            break;
+        case kCGImageAlphaOnly:
+            numComps = 1;
+            break;
+        case kCGImageAlphaNone:break;
+        default:
+            break;
+    }
+    
+    // +7 for round up: if 1bit 1comp 1width, we correct get 1 byte result
+    size_t bytesPerPixel = (bitsPerComponent * numComps + 7) / 8;
+    size_t bytesPerRow =  bytesPerPixel * width;
+    return bytesPerRow;
+}
+
 CGContextRef CGBitmapContextCreateWithData(
   void *data,
   size_t width,
@@ -265,7 +296,11 @@ CGContextRef CGBitmapContextCreateWithData(
             "<callback>, <releaseinfo>",
             data, width, height, bitsPerComponent, bytesPerRow)
   cairo_format_t format = CAIRO_FORMAT_INVALID;
-  cairo_surface_t *surf;  
+  cairo_surface_t *surf;
+    
+  if (bytesPerRow == 0) {
+      bytesPerRow = calcuateBytesPerRow(width,bitsPerComponent,cs,info);
+  }
 
   // Create the user requested buffer
   if (data == NULL)

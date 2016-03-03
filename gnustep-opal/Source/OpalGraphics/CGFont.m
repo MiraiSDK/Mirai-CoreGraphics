@@ -56,6 +56,14 @@
 #endif
 }
 
+- (void)dealloc
+{
+    RELEASE(fullName);
+    RELEASE(postScriptName);
+    
+    [super dealloc];
+}
+
 - (bool) canCreatePostScriptSubset: (CGFontPostScriptFormat)format
 {
   [self doesNotRecognizeSelector: _cmd];
